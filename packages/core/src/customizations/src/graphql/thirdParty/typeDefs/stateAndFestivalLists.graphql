@@ -1,0 +1,14 @@
+type List {
+  collectionId: Int
+  level1Label: String
+  level1Value: String
+  level2Label: String
+  level2Value: String
+  region: String
+  title: String
+  type: String
+}
+
+type Query {
+  lists: [List]
+}

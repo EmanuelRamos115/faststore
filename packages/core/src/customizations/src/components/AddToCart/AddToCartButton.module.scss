@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: var(--fs-spacing-1);
+  width: 100%;
+
+  @include media('<tablet') {
+    button {
+      width: 100%;
+    }
+  }
+}

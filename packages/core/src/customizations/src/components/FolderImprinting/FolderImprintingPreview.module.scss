@@ -1,0 +1,46 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 342px;
+}
+
+.image {
+  display: block;
+  width: 100%;
+}
+
+.textOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+
+  p {
+    color: var(--jwp-color-imprinting-gold);
+    font-weight: var(--fs-text-weight-bold);
+    font-size: var(--fs-text-size-3);
+    letter-spacing: 0;
+  }
+}
+
+.upperSection {
+  position: absolute;
+  top: 9%;
+  right: 11%;
+}
+
+.middleSection {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.lowerSection {
+  position: absolute;
+  bottom: 10%;
+  right: 11%;
+}

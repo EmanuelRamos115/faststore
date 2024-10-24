@@ -1,0 +1,19 @@
+.over145YearsButton {
+  display: inline-flex;
+  align-items: center;
+  column-gap: var(--fs-spacing-3);
+  border: 1px solid var(--jwp-color-white);
+  color: var(--jwp-color-white);
+  padding: var(--fs-spacing-2) var(--fs-spacing-4);
+  border-radius: var(--fs-radius-rounded);
+  transition: background-color var(--fs-standard-transition);
+
+  @include hover-active-focus {
+    background-color: var(--jwp-color-white-10-percent);
+  }
+
+  @include media('<=tablet') {
+    display: flex;
+    justify-content: center;
+  }
+}

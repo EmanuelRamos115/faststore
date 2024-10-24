@@ -1,0 +1,15 @@
+.button {
+  display: flex;
+  align-items: center;
+  gap: var(--fs-spacing-1);
+  padding: 0.625rem 0.625rem;
+  text-align: left;
+
+  svg {
+    height: 22px;
+  }
+
+  @include media('>phonelg') {
+    padding: 0.625rem 1rem;
+  }
+}

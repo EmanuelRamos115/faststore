@@ -1,0 +1,377 @@
+.skuListItemRow {
+  display: flex;
+  align-items: center;
+  gap: var(--fs-spacing-6);
+  padding: var(--fs-spacing-1) var(--fs-spacing-7);
+  min-height: 8.125rem;
+  border: 1px solid var(--jwp-color-grey);
+  position: relative;
+  cursor: pointer;
+
+  &[data-is-not-available='true'] {
+    cursor: default;
+  }
+
+  &[data-is-selected='true'] {
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.05);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 8px;
+      height: 100%;
+      background: var(--jwp-color-badge-red);
+    }
+
+    @include media('<=notebook') {
+      box-shadow: none;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  &:first-child {
+    @include media('<=tablet') {
+      border-radius: var(--fs-radius-4) var(--fs-radius-4) 0 0;
+    }
+  }
+
+  // select all but the last child
+  &:not(:last-child) {
+    border-bottom: none;
+
+    @include media('<=notebook') {
+      border-bottom: 1px solid var(--jwp-color-grey);
+    }
+  }
+
+  &:last-child {
+    border-radius: 0 0 var(--fs-radius-4) var(--fs-radius-4);
+
+    @include media('<=notebook') {
+      border-radius: var(--fs-radius-4);
+    }
+
+    @include media('<=tablet') {
+      border-radius: 0 0 var(--fs-radius-4) var(--fs-radius-4);
+    }
+  }
+
+  @include media('<=desktop') {
+    padding: var(--fs-text-size-0) var(--fs-spacing-5);
+  }
+
+  @include media('<=notebook') {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--fs-spacing-3-1\2);
+    border: 1px solid var(--jwp-color-grey);
+    border-radius: var(--fs-radius-4);
+    padding: var(--fs-spacing-3);
+    width: calc(50% - 1rem);
+  }
+
+  @include media('<=tablet') {
+    border-radius: 0;
+    width: 100%;
+  }
+}
+
+.skuListItemBox {
+  @include sku-table-widths;
+}
+
+// DESCRIPTION / DETAILS
+.descriptionWrapper {
+  @include media('<=notebook') {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.descriptionTextWrapper {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: var(--fs-spacing-0);
+
+  @include media('<=notebook') {
+    gap: var(--fs-spacing-0);
+  }
+}
+
+.badgesWrapper {
+  display: flex;
+  gap: var(--fs-spacing-1);
+  margin-bottom: var(--fs-spacing-0);
+}
+
+.descriptionText {
+  font-family: var(--fs-text-face-title);
+  font-size: 1.125rem;
+  font-weight: var(--fs-text-weight-medium);
+  line-height: 1.15;
+}
+
+.mobileMsrp {
+  display: none;
+
+  @include media('<=notebook') {
+    display: block;
+    font-size: var(--fs-text-size-base);
+    font-weight: var(--fs-text-weight-bold);
+    line-height: 1.5;
+  }
+}
+
+.detailsWrapper {
+  color: var(--jwp-color-dark-grey);
+  font-size: var(--fs-text-size-0);
+  line-height: 1.5;
+
+  @include media('<=notebook') {
+    display: none;
+  }
+
+  button,
+  p {
+    color: inherit;
+    font-size: inherit;
+  }
+}
+
+.viewDetailsToggle {
+  cursor: pointer;
+  padding: 0;
+  font-size: var(--fs-text-size-0);
+  text-decoration: underline;
+
+  @include media('<=notebook') {
+    display: none;
+  }
+}
+
+// DELIVERY
+.deliveryWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fs-spacing-1);
+
+  @include media('<=notebook') {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.deliveryMethods {
+  display: flex;
+  align-items: center;
+  gap: var(--fs-spacing-1);
+
+  @include media('>notebook') {
+    width: 100%;
+  }
+}
+
+.deliveryMethodIconWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  &[data-delivery-method='New'] {
+    width: 1.375rem;
+
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.mobileShipsText {
+  display: none;
+
+  @include media('<=notebook') {
+    display: block;
+    font-size: var(--fs-text-size-0);
+    margin-left: var(--fs-spacing-0);
+  }
+}
+
+.deliveryFlag {
+  font-size: var(--fs-text-size-0);
+  font-weight: var(--fs-text-weight-semibold);
+  line-height: 1;
+}
+
+// LEVEL
+.mobileLevel {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+
+  @include media('>notebook') {
+    display: none;
+  }
+}
+
+.mobileLevelText {
+  display: inline-block;
+  text-align: center;
+  line-height: 1;
+}
+
+.mobileLevelLabel {
+  font-size: 0.625rem;
+  font-weight: var(--fs-text-weight-semibold);
+}
+
+.mobileLevelValue {
+  font-size: 0.75rem;
+}
+
+// PREVIEW
+.previewIconRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 2rem;
+
+  @include media('<=desktopwide') {
+    gap: 1.5em;
+  }
+}
+
+// SAVE
+.saveIconWrapper {
+  color: var(--jwp-color-medium-grey);
+  cursor: pointer;
+}
+
+// PRICE
+.priceWrapper {
+  font-size: var(--fs-text-size-base);
+  font-weight: var(--fs-text-weight-bold);
+  line-height: 1.5;
+
+  [data-fs-product-price] {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: var(--fs-spacing-0);
+
+    [data-fs-price-variant='listing'] {
+      font-size: var(--fs-text-size-base);
+      color: var(--jwp-color-dark-grey);
+      font-weight: var(--fs-text-weight-regular);
+      text-decoration: line-through;
+    }
+  }
+}
+
+.orderExtraPartBtn {
+  border-bottom: 1px solid var(--jwp-color-badge-blue);
+  color: var(--jwp-color-badge-blue);
+  cursor: pointer;
+  font-size: var(--fs-text-size-2);
+  font-weight: var(--fs-text-weight-semibold);
+  line-height: 1.5;
+  padding: 0;
+}
+
+// ADD QTY
+.qtyWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.qtyMessaging {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  margin-top: calc(-20px - 0.5rem);
+
+  p {
+    font-size: var(--fs-text-size-0);
+  }
+
+  &:empty {
+    display: none;
+  }
+}
+
+// MOBILE CONTROLS
+.mobileControls {
+  display: none;
+
+  @include media('<=notebook') {
+    display: flex;
+    gap: 1rem;
+    border-top: 1px solid var(--jwp-color-grey);
+    margin-top: auto;
+    padding-top: var(--fs-spacing-3);
+    width: 100%;
+  }
+}
+
+.mobileControlGroupCart {
+  align-self: center;
+  margin-left: auto;
+}
+
+.mobileSaveButton {
+  svg {
+    color: var(--jwp-color-medium-grey);
+  }
+}
+
+.mobileControlIconButton {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: var(--fs-spacing-0);
+  height: 42px;
+  padding: 0;
+}
+
+.mobileControlButtonText {
+  font-size: 0.625rem;
+  font-weight: var(--fs-text-weight-semibold);
+  margin-top: auto;
+}
+
+.mobileDrawerControl {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobileDrawerSkuName {
+  font-family: var(--fs-text-face-title);
+  font-size: var(--fs-text-size-4);
+  font-weight: var(--fs-text-weight-medium);
+}
+
+.mobileDrawerSkuSpecs {
+  display: flex;
+  gap: var(--fs-spacing-3-1\2);
+  font-size: var(--fs-text-size-0);
+}
+
+.mobileQtyMessaging {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: var(--fs-spacing-1);
+  margin-top: var(--fs-spacing-1);
+
+  p {
+    font-size: var(--fs-text-size-0);
+  }
+}

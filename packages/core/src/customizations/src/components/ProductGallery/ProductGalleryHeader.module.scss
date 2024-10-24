@@ -1,0 +1,29 @@
+.section {
+  @include layout-content;
+  padding-bottom: var(--fs-spacing-3);
+
+  @include media('>notebook') {
+    padding-bottom: var(--fs-spacing-4);
+  }
+}
+
+.heading {
+  font-weight: var(--fs-text-weight-medium);
+  font-size: 1.625rem;
+
+  @include media('>notebook') {
+    font-size: 2.25rem;
+  }
+}
+
+.productCount {
+  display: inline-block;
+  margin-left: var(--fs-spacing-1);
+  font-family: var(--fs-text-face-body);
+  font-weight: var(--fs-text-weight-regular);
+  font-size: var(--fs-text-size-3);
+
+  @include media('>notebook') {
+    margin-left: var(--fs-spacing-2);
+  }
+}

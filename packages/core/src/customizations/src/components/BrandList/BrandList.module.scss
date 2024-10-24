@@ -1,0 +1,98 @@
+.jumpToSection {
+  @include content-wrapper('wide');
+  text-align: center;
+}
+
+.letterNav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  margin: 0 auto;
+  gap: 0.4375rem;
+  padding: var(--fs-spacing-6) 0;
+
+  @include media('>tablet') {
+    justify-content: center;
+    padding: var(--fs-spacing-8) var(--fs-spacing-1);
+  }
+}
+
+.letterLink {
+  @include transition;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: var(--jwp-color-light-grey);
+  border-radius: 3px;
+  text-decoration: none;
+  font-weight: var(--fs-text-weight-semibold);
+  color: var(--jwp-color-black);
+
+  &:not(.letterLinkActive) {
+    @include hover-active-focus {
+      background: var(--jwp-color-grey);
+    }
+  }
+}
+
+.letterLinkActive {
+  background: var(--jwp-color-myscore-blue);
+  color: var(--jwp-color-white);
+}
+
+.brandsSection {
+  background: var(--jwp-color-light-grey);
+  padding: var(--fs-spacing-4) 0;
+}
+
+.brandsWrapper {
+  @include content-wrapper(1220px);
+}
+
+.alphaSection {
+  padding: var(--fs-spacing-5) var(--fs-spacing-2);
+
+  + .alphaSection {
+    border-top: 1px solid var(--jwp-color-border);
+  }
+}
+
+.alphaHeading {
+  margin-bottom: var(--fs-spacing-4);
+}
+
+.brandsList {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  column-gap: var(--fs-spacing-3);
+
+  @include media('<notebook') {
+    grid-template-columns: repeat(3, 33.33%);
+  }
+
+  @include media('<tablet') {
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  @include media('<phonelg') {
+    grid-template-columns: repeat(1, 100%);
+  }
+}
+
+.brandsListItem {
+  display: block;
+}
+
+.brandLink {
+  font-size: var(--fs-text-size-2);
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 100%;
+}

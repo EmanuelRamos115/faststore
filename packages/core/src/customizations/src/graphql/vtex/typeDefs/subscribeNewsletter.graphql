@@ -1,0 +1,10 @@
+input NewsletterFieldsInput {
+  name: String
+  phone: String
+  bindingId: String
+  bindingUrl: String
+}
+
+type Mutation {
+  subscribeNewsletter(email: String, fields: NewsletterFieldsInput): Boolean
+}

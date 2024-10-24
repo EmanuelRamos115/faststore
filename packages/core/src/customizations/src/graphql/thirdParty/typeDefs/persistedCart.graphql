@@ -1,0 +1,160 @@
+scalar ActiveVariationsV2
+scalar SlugsMapV2
+scalar AvailableVariationsV2
+
+scalar ItemAdditionalPropertyValueV2
+scalar ItemAdditionalPropertyValueReferenceV2
+
+scalar TimestampV2
+
+scalar VariantListItemV2
+
+type CartMessageV2 {
+  text: String
+  status: String
+}
+
+type CartSellerV2 {
+  identifier: String
+}
+
+type OfferedItemImageV2 {
+  url: String
+  alternateName: String
+}
+
+type BrandV2 {
+  name: String
+}
+
+type SkuVariantV2 {
+  activeVariations: ActiveVariationsV2
+  slugsMap: SlugsMapV2
+  availableVariations: AvailableVariationsV2
+}
+
+type CartItemIsVariantOfV2 {
+  productGroupID: String
+  name: String
+  skuVariants: SkuVariantV2
+}
+
+type AdditionalPropertyV2 {
+  propertyID: String
+  name: String
+  value: ItemAdditionalPropertyValueV2
+  valueReference: ItemAdditionalPropertyValueReferenceV2
+}
+
+type OfferedItemV2 {
+  sku: String
+  name: String
+  unitMultiplier: Int
+  gtin: String
+  image: [OfferedItemImageV2]
+  brand: BrandV2
+  isVariantOf: CartItemIsVariantOfV2
+  additionalProperty: [AdditionalPropertyV2]
+}
+
+type CartItemV2 {
+  id: String
+  quantity: Int
+  price: Float
+  priceWithTaxes: Float
+  listPrice: Float
+  listPriceWithTaxes: Float
+  seller: CartSellerV2
+  itemOffered: OfferedItemV2
+  timestamp: TimestampV2
+}
+
+type CartV2 {
+  id: ID
+  messages: [CartMessageV2]
+  items: [CartItemV2]
+}
+
+type CartWithRevision {
+  cart: CartV2
+  cartSerialized: String
+  revision: Int
+}
+
+input CartMessageInputV2 {
+  text: String
+  status: String
+}
+
+input CartSellerInputV2 {
+  identifier: String
+}
+
+input OfferedItemImageInputV2 {
+  url: String
+  alternateName: String
+}
+
+input BrandInputV2 {
+  name: String
+}
+
+input SkuVariantInputV2 {
+  activeVariations: ActiveVariationsV2
+  slugsMap: SlugsMapV2
+  availableVariations: AvailableVariationsV2
+}
+
+input CartItemIsVariantOfInputV2 {
+  productGroupID: String
+  name: String
+  skuVariants: SkuVariantInputV2
+  additionalProperty: [AdditionalPropertyInputV2]
+  fullVariantList: [VariantListItemV2]
+}
+
+input AdditionalPropertyInputV2 {
+  propertyID: String
+  name: String
+  value: ItemAdditionalPropertyValueV2
+  valueReference: ItemAdditionalPropertyValueReferenceV2
+}
+
+input OfferedItemInputV2 {
+  sku: String
+  name: String
+  unitMultiplier: Int
+  gtin: String
+  image: [OfferedItemImageInputV2]
+  brand: BrandInputV2
+  isVariantOf: CartItemIsVariantOfInputV2
+  additionalProperty: [AdditionalPropertyInputV2]
+}
+
+input CartItemInputV2 {
+  id: String
+  quantity: Int
+  price: Float
+  priceWithTaxes: Float
+  listPrice: Float
+  listPriceWithTaxes: Float
+  seller: CartSellerInputV2
+  itemOffered: OfferedItemInputV2
+  timestamp: TimestampV2
+}
+
+input CartInputV2 {
+  id: ID
+  messages: [CartMessageInputV2]
+  items: [CartItemInputV2]
+}
+
+type Mutation {
+  syncPersistedCart(
+    email: String
+    cartId: ID
+    cart: CartInputV2
+    cartSerialized: String
+    revision: Int
+  ): CartWithRevision
+}

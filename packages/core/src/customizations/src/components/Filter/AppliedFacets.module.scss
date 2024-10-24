@@ -1,0 +1,60 @@
+.container {
+  padding: 1.25rem var(--fs-spacing-3);
+  border-bottom: 1px solid var(--jwp-color-border);
+
+  @include media('>notebook') {
+    padding: 1.25rem 0 1.25rem;
+  }
+}
+
+.heading {
+  display: none;
+
+  @include media('>notebook') {
+    display: block;
+    margin-bottom: 1.25rem;
+  }
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--fs-spacing-2);
+
+  @include media('>notebook') {
+    display: block;
+  }
+}
+
+.item {
+  @include media('>notebook') {
+    + .item {
+      margin-top: var(--fs-spacing-2);
+    }
+  }
+}
+
+.clearButton {
+  @include input-focus-ring;
+  display: flex;
+  align-items: center;
+  gap: var(--fs-spacing-1);
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.clearAllButton {
+  @include input-focus-ring;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 1.25rem;
+  color: var(--jwp-color-blue);
+  text-decoration: underline;
+  font-weight: var(--fs-text-weight-semibold);
+}

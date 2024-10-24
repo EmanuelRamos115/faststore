@@ -1,0 +1,36 @@
+.twoCards {
+  @include content-wrapper('narrow');
+
+  display: flex;
+  align-items: stretch;
+  gap: var(--fs-spacing-4);
+
+  @include media('<=tablet') {
+    flex-direction: column;
+  }
+}
+
+.card {
+  border: 1px solid var(--jwp-color-medium-grey);
+  border-radius: var(--fs-radius-4);
+  flex: 1;
+  overflow: hidden;
+}
+
+.imageWrapper {
+  @include fit-nextjs-image;
+  border-bottom: 1px solid var(--jwp-color-medium-grey);
+}
+
+.contentWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: var(--fs-spacing-4);
+  padding: var(--fs-spacing-7) var(--fs-spacing-6);
+  text-align: center;
+
+  @include media('<=notebook') {
+    padding: var(--fs-spacing-6) var(--fs-spacing-5);
+  }
+}

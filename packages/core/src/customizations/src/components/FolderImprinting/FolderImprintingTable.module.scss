@@ -1,0 +1,122 @@
+.table {
+  padding-top: var(--fs-spacing-3);
+  text-align: center;
+}
+
+.tableHeader {
+  background-color: var(--jwp-color-dark-grey);
+  color: var(--jwp-color-white);
+  font-family: var(--fs-text-face-title);
+  font-size: var(--fs-text-size-2);
+  font-weight: var(--fs-text-weight-medium);
+  border-radius: var(--fs-radius-1);
+}
+
+.editableMessage {
+  background-color: var(--jwp-color-teal);
+  border-radius: 2rem;
+  padding: var(--fs-spacing-0) 0;
+  font-size: var(--fs-text-size-0);
+  font-weight: var(--fs-text-weight-semibold);
+  margin-top: var(--fs-spacing-2);
+}
+
+.tableRow {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--fs-spacing-0);
+  padding: var(--fs-spacing-2);
+  padding-left: 0;
+
+  .tableBody & {
+    border-bottom: 1px solid var(--jwp-color-table-grey);
+  }
+
+  @include media('>notebook') {
+    align-items: center;
+  }
+}
+
+.numberColumn {
+  flex: 0 0 37px;
+  text-align: center;
+
+  .tableHeader & {
+    padding-left: var(--fs-spacing-1);
+  }
+
+  .tableBody & {
+    font-size: var(--fs-text-size-3);
+  }
+}
+
+.contentColumn {
+  @include media('>notebook') {
+    display: none;
+  }
+}
+
+.lineWrapper {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--fs-spacing-1);
+  font-weight: var(--fs-text-weight-semibold);
+
+  .tableHeader & {
+    display: none;
+  }
+
+  @include media('>notebook') {
+    flex-direction: row;
+    align-items: center;
+    .tableHeader & {
+      display: flex;
+    }
+  }
+}
+
+.lineColumn {
+  width: 100%;
+
+  input {
+    width: 100%;
+  }
+
+  &.lineColumnDisabled {
+    display: none;
+  }
+
+  .tableHeader & {
+    display: none;
+  }
+
+  @include media('>notebook') {
+    flex: 1 1 25%;
+
+    &.lineColumnDisabled {
+      display: block;
+    }
+
+    .tableHeader & {
+      display: block;
+    }
+  }
+}
+
+.lineLabel {
+  display: block;
+  margin-bottom: 10px;
+  text-align: left;
+
+  @include media('>notebook') {
+    display: none;
+  }
+}
+
+.actionsColumn {
+  @include media('>notebook') {
+    flex: 0 0 70px;
+  }
+}

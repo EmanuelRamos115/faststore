@@ -1,0 +1,121 @@
+.formContainer {
+  --fs-button-radius: 42px;
+  --fs-list-separator-color: #d9d9d9;
+  --fs-bg-accordion-content: #f6f4f5;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--fs-spacing-3);
+  width: 100%;
+
+  [data-fs-button] {
+    width: 100%;
+    border-radius: var(--fs-button-radius);
+    color: var(--jwp-color-white);
+    overflow: hidden;
+    min-height: unset;
+  }
+
+  [data-fs-button-variant='tertiary'] {
+    border: 1px solid var(--jwp-color-black);
+    color: var(--jwp-color-black);
+  }
+
+  [data-fs-button-wrapper] {
+    font-family: var(--fs-text-face-title);
+    font-size: var(--fs-text-size-2);
+    color: inherit;
+    font-weight: 450;
+    letter-spacing: 0.008em;
+    text-align: center;
+    padding: var(--fs-spacing-1);
+  }
+}
+
+.accordionContainer {
+  gap: 0;
+
+  [data-fs-accordion-panel] {
+    background: var(--fs-bg-accordion-content);
+    padding: var(--fs-spacing-3-1\2);
+
+    [data-fs-button] {
+      margin-top: var(--fs-spacing-3-1\2);
+    }
+  }
+
+  [data-fs-accordion-item] {
+    border-bottom: 1px solid var(--fs-list-separator-color);
+  }
+
+  [data-fs-accordion-item] > [data-fs-button] {
+    border: 0;
+    border-radius: 0;
+
+    [data-fs-button-wrapper] {
+      display: flex;
+      justify-content: space-between;
+      padding: var(--fs-spacing-3-1\2) 0;
+      background-color: transparent;
+    }
+  }
+
+  [data-fs-opened='true'] {
+    padding-bottom: 20px;
+  }
+}
+
+.labelSelect,
+.labelText {
+  display: block;
+  width: 100%;
+  font-family: var(--fs-text-face-body);
+  font-size: var(--fs-text-size-0);
+  font-weight: var(--fs-text-weight-bold);
+  text-align: left;
+}
+
+.selectInput,
+.textInput {
+  width: 100%;
+  border-color: var(--jwp-color-grey);
+  border-radius: var(--fs-radius-2);
+  margin-top: var(--fs-spacing-1);
+  outline: none;
+
+  font-family: var(--fs-text-face-body);
+  font-size: var(--fs-text-size-base);
+  font-weight: var(--fs-text-weight-regular);
+  text-align: left;
+
+  transition: none;
+}
+
+.textInput {
+  padding: var(--fs-spacing-2);
+  line-height: 30px;
+  scrollbar-gutter: stable;
+}
+
+.accordionItem {
+  border-bottom: 1px solid --jwp-color-table-grey;
+
+  &:first-child {
+    .accordionButton [data-fs-button-wrapper] {
+      padding-top: 0px;
+    }
+  }
+
+  .accordionButton {
+    [data-fs-button-wrapper] {
+      font-size: var(--fs-text-size-3);
+      font-family: var(--fs-text-face-body);
+      font-weight: var(--fs-text-weight-bold);
+      text-align: left;
+    }
+  }
+}
+
+.submitWishlistButton {
+  margin-top: 20px;
+}

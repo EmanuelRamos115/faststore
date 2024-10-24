@@ -1,0 +1,86 @@
+.container {
+  display: flex;
+  padding: var(--fs-spacing-3) 0;
+  gap: var(--fs-spacing-1);
+
+  @include media('>tablet') {
+    justify-content: flex-end;
+  }
+
+  @include media('>notebook') {
+    padding: var(--fs-spacing-4) 0;
+  }
+
+  @include media('<=notebook') {
+    @include layout-content;
+  }
+}
+
+.sort {
+  flex: 0 0 105px;
+}
+
+.viewButton {
+  @include input-focus-ring;
+  width: 54px;
+
+  [data-fs-button-wrapper] {
+    border: 1px solid var(--fs-color-neutral-2);
+    border-radius: 4px;
+    background-color: var(--jwp-color-white);
+  }
+}
+
+.filterButton:focus,
+.filterButton:hover,
+.viewButton:focus,
+.viewButton:hover {
+  [data-fs-button-wrapper] {
+    border: 1px solid var(--jwp-color-black);
+    border-radius: 4px;
+  }
+}
+
+.filterButton {
+  @include input-focus-ring;
+  width: 100%;
+  display: block;
+
+  [data-fs-button-wrapper] {
+    height: 100%;
+    border: 1px solid var(--fs-color-neutral-2);
+    border-radius: 4px;
+    background-color: var(--jwp-color-white);
+  }
+
+  @include media('>tablet') {
+    width: 175px;
+  }
+
+  @include media('>notebook') {
+    display: none;
+  }
+}
+
+.filterText {
+  display: flex;
+  align-items: center;
+  gap: var(--fs-spacing-1);
+}
+
+.filterTextLabel {
+  font-weight: var(--fs-text-weight-bold);
+}
+
+.filterTextCount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  font-size: var(--fs-text-size-0);
+  background-color: var(--jwp-color-maroon);
+  font-weight: var(--fs-text-weight-bold);
+  border-radius: 50%;
+  color: var(--jwp-color-white);
+}

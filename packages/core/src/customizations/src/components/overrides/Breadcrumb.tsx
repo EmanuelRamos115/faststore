@@ -1,11 +1,14 @@
-// This is an example of how it can be used on the starter.
+import type { SectionOverride } from '@faststore/core'
 
-import { SectionOverride } from 'src/typings/overrides'
+import CustomBreadcrumb from '../CustomBreadcrumb/CustomBreadcrumb'
 
 const SECTION = 'Breadcrumb' as const
 
 const override: SectionOverride = {
   section: SECTION,
+  components: {
+    Breadcrumb: { Component: CustomBreadcrumb },
+  },
 }
 
 export { override }

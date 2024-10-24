@@ -1,0 +1,22 @@
+.logo {
+  text-align: center;
+
+  @include media('>notebook') {
+    text-align: left;
+  }
+}
+
+.logoLink {
+  display: inline-block;
+  width: 112px;
+
+  @include media('>notebook') {
+    width: 220px;
+  }
+}
+
+.logoImage {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

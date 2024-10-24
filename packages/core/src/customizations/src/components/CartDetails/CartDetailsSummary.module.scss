@@ -1,0 +1,122 @@
+.summary {
+  background: var(--jwp-color-light-grey);
+  padding: var(--fs-spacing-4) var(--fs-spacing-3) 0;
+
+  @include media('>tablet') {
+    padding: var(--fs-spacing-4) var(--fs-spacing-4) 0;
+  }
+}
+
+.heading {
+  padding-bottom: var(--fs-spacing-4);
+}
+
+.amountWrapper {
+  padding: var(--fs-spacing-4) 0;
+  border-top: 1px solid var(--jwp-color-border);
+}
+
+.amount {
+  display: flex;
+  gap: var(--fs-spacing-4);
+  justify-content: space-between;
+  align-items: center;
+
+  + .amount {
+    margin-top: var(--fs-spacing-2);
+  }
+}
+
+.amountTitle {
+  .amountTotal & {
+    font-size: var(--fs-spacing-3-1\2);
+    font-family: var(--fs-text-face-title);
+    font-weight: var(--fs-text-weight-medium);
+  }
+}
+
+.amountValue {
+  font-weight: var(--fs-text-weight-bold);
+
+  .amountTotal & {
+    color: var(--jwp-color-maroon);
+  }
+}
+
+.amountTaxInfo {
+  margin-top: var(--fs-spacing-4);
+
+  p + p {
+    margin-top: var(--fs-spacing-2);
+  }
+}
+
+.actionsWrapper {
+  @include layout-content;
+  display: flex;
+  flex-direction: column;
+  gap: var(--fs-spacing-4);
+  padding: var(--fs-spacing-4) 0;
+  border-bottom: 1px solid var(--jwp-color-border);
+  text-align: center;
+
+  @include media('>tablet') {
+    width: 100%;
+    padding: var(--fs-spacing-4) 0 var(--fs-spacing-6);
+  }
+}
+
+.actionsButton {
+  margin-bottom: var(--fs-spacing-2);
+  font-weight: var(--fs-text-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  white-space: nowrap;
+}
+
+.actionsButtonDisabled {
+  opacity: 30%;
+
+  @include hover-active-focus {
+    cursor: not-allowed;
+  }
+}
+
+.actionsLink {
+  display: inline-flex;
+  gap: var(--fs-spacing-0);
+  align-items: center;
+  font-size: var(--fs-text-size-2);
+  font-weight: var(--fs-text-weight-semibold);
+  color: var(--jwp-color-blue);
+  text-decoration: underline;
+
+  svg {
+    margin-top: 2px;
+    width: 12px;
+  }
+}
+
+.actionsLinkQuote {
+  display: inline-block;
+  margin-top: var(--fs-spacing-2);
+}
+
+.linksWrapper {
+  @include layout-content;
+  display: flex;
+  flex-direction: column;
+  gap: var(--fs-spacing-3);
+  padding: var(--fs-spacing-4) 0;
+
+  @include media('>tablet') {
+    width: 100%;
+    padding: var(--fs-spacing-6) 0;
+  }
+}
+
+.link {
+  color: inherit;
+  text-decoration: underline;
+  font-size: var(--fs-text-size-2);
+}

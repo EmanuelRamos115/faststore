@@ -1,0 +1,47 @@
+@include media('<=tablet') {
+  .desktop {
+    display: none;
+  }
+
+  .accordionButton {
+    font-family: var(--fs-text-face-title);
+    text-transform: uppercase;
+  }
+
+  /* To be removed when data-fs-button in custom-theme.scss no longer conflicts with this style */
+  .accordionButton div {
+    background-color: transparent !important;
+    color: var(--jwp-color-white) !important;
+    text-align: left;
+  }
+}
+
+@include media('>tablet') {
+  .mobile {
+    display: none;
+  }
+
+  .desktopNav li {
+    font-family: var(--fs-text-face-body);
+    font-size: var(--fs-text-size-1);
+    padding-top: var(--fs-spacing-3);
+  }
+
+  .title {
+    font-family: var(--fs-text-face-title);
+    font-size: var(--fs-text-size-0);
+    font-weight: var(--fs-text-weight-bold);
+    text-transform: uppercase;
+  }
+}
+
+.desktopNav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--fs-spacing-8);
+}
+
+.menuLinks li,
+.desktopNav a {
+  color: var(--jwp-color-white);
+}

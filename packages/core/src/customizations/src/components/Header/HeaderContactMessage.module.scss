@@ -1,0 +1,19 @@
+.contactMessage {
+  text-align: center;
+  color: var(--jwp-color-white);
+
+  p {
+    font-size: 10px;
+    margin: 0;
+
+    @include media('>notebook') {
+      font-size: var(--fs-text-size-0);
+    }
+  }
+
+  a {
+    color: var(--jwp-color-gold);
+    padding: 0 var(--fs-spacing-1);
+    text-decoration: underline;
+  }
+}

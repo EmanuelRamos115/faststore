@@ -1,0 +1,37 @@
+.accordionItem {
+  border-right: 1px solid var(--jwp-color-medium-grey);
+  border-left: 1px solid var(--jwp-color-medium-grey);
+  border-bottom: 1px solid var(--jwp-color-medium-grey);
+}
+
+.accordionItem:first-of-type {
+  border-top: 1px solid var(--jwp-color-medium-grey);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.accordionItem:last-of-type {
+  border-bottom: 1px solid var(--jwp-color-medium-grey);
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.accordionButton {
+  width: 100%;
+}
+
+.accordionButton [data-fs-button-wrapper] {
+  background-color: var(--jwp-color-white);
+  font-family: var(--fs-text-face-title);
+  border-radius: 6px;
+  padding-left: var(--fs-spacing-4);
+}
+
+.accordionPanel {
+  background-color: var(--jwp-color-white);
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  padding: 0 var(--fs-spacing-4) var(--fs-spacing-3) var(--fs-spacing-4);
+  font-family: var(--fs-text-face-body);
+  font-size: var(--fs-text-size-2);
+}

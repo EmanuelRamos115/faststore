@@ -1,0 +1,68 @@
+$headerHeight: 143px;
+
+.mobileMenu {
+  position: fixed;
+  top: $headerHeight;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - $headerHeight);
+  height: calc(100svh - $headerHeight);
+  overflow-y: scroll;
+  background: var(--jwp-color-white);
+  z-index: 10;
+}
+
+.menusContainer {
+  padding-top: var(--fs-spacing-1);
+  padding-bottom: var(--fs-spacing-3);
+}
+
+.backButton {
+  @include input-focus-ring;
+  display: flex;
+  align-items: center;
+  gap: var(--fs-spacing-0);
+  font-family: var(--fs-text-face-body);
+  font-size: var(--fs-text-size-0);
+  font-weight: var(--fs-text-weight-semibold);
+  padding: 0 var(--fs-spacing-3);
+  text-decoration: underline;
+  margin-top: var(--fs-spacing-1);
+
+  svg {
+    width: 5px;
+  }
+}
+
+.heading {
+  text-align: center;
+  border-bottom: 1px solid var(--jwp-color-border-light);
+  padding: var(--fs-spacing-2);
+  font-family: var(--fs-text-face-title);
+  font-weight: var(--fs-text-weight-medium);
+  font-size: var(--fs-text-size-4);
+}
+
+.menuLink {
+  @include input-focus-ring;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 14px var(--fs-spacing-3);
+  font-family: var(--fs-text-face-title);
+  font-size: var(--fs-text-size-2);
+  font-weight: var(--fs-text-weight-medium);
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--jwp-color-black);
+}
+
+.menuLinkShopAll {
+  text-decoration: underline;
+  color: var(--jwp-color-maroon);
+}

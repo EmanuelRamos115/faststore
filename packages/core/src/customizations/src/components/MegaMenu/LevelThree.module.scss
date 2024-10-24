@@ -1,0 +1,48 @@
+.levelThreeItems {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.levelThreeItem {
+  width: 33.33%;
+  max-width: 240px;
+  padding-right: var(--fs-spacing-3);
+  padding-bottom: var(--fs-spacing-3);
+}
+
+.levelThreeLink {
+  color: var(--jwp-color-black);
+  font-family: var(--fs-text-face-title);
+  font-size: calc(var(--fs-text-size-3) + 2px);
+  font-weight: var(--fs-text-weight-medium);
+
+  > a,
+  > span {
+    display: block;
+    color: var(--jwp-color-black);
+    text-decoration: none;
+    padding: var(--fs-spacing-1) 0 var(--fs-spacing-1) var(--fs-spacing-0);
+  }
+
+  > span {
+    cursor: default;
+  }
+
+  @include hover {
+    > a {
+      color: var(--jwp-color-maroon);
+      background-color: var(--jwp-color-light-grey);
+    }
+
+    img {
+      // Generated using: https://codepen.io/sosuke/pen/Pjoqqp
+      filter: brightness(0) saturate(100%) invert(12%) sepia(37%)
+        saturate(3974%) hue-rotate(321deg) brightness(92%) contrast(107%);
+    }
+  }
+}
+
+.noChildrenWrapper {
+  width: 265px;
+}

@@ -1,0 +1,11 @@
+.section {
+  min-height: calc(100vh - 143px); // 143px is shortest height of header
+
+  a[role='button'] {
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}

@@ -82,7 +82,26 @@
     "style-loader": "^3.3.1",
     "swr": "^1.3.0",
     "tsx": "^4.6.2",
-    "typescript": "4.7.3"
+    "typescript": "4.7.3",
+    "@builder.io/react": "^3.1.1",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@hookform/resolvers": "^3.3.4",
+    "@mui/material": "^5.15.3",
+    "@sentry/integrations": "^7.106.0",
+    "@sentry/nextjs": "^7.93.0",
+    "@types/react-image-gallery": "^1.2.4",
+    "classnames": "^2.3.2",
+    "draft-js": "^0.11.7",
+    "json-schema-to-typescript": "^13.1.2",
+    "react-hook-form": "^7.51.3",
+    "react-image-gallery": "^1.3.0",
+    "react-slick": "^0.29.0",
+    "react-tabs": "^6.0.2",
+    "react-use-hoverintent": "^1.3.0",
+    "slick-carousel": "^1.8.1",
+    "text-clipper": "^2.2.0",
+    "zod": "^3.23.5"
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.12.1",
@@ -110,7 +129,17 @@
     "stylelint-config-standard-scss": "^3.0.0",
     "stylelint-order": "^5.0.0",
     "stylelint-scss": "^4.0.1",
-    "ts-jest": "29.1.1"
+    "ts-jest": "29.1.1",
+    "@faststore/lighthouse": "3.0.54",
+    "@types/draftjs-to-html": "^0.8.4",
+    "@types/react": "^18.2.0",
+    "@types/react-slick": "^0.23.12",
+    "eslint-config-vtex": "^15.0.2",
+    "eslint-plugin-prettier": "^5.1.3",
+    "patch-package": "^8.0.0",
+    "postinstall-postinstall": "^2.1.0",
+    "typescript": "5.4.3",
+    "vtex.rich-text": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.rich-text@0.15.0/public/@types/vtex.rich-text"
   },
   "lint-staged": {
     "*.{ts,js,tsx,jsx}": [

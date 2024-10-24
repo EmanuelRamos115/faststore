@@ -1,5 +1,201 @@
-// ----------------------------------------------------------
-// Stores' custom mixins will override this file
-// ----------------------------------------------------------
+@import '@faststore/ui/src/styles/base/utilities';
 
-@import "@faststore/ui/src/styles/base/utilities.scss";
+// Overwrites Breakpoints & Mixins ////////////////////
+$breakpoints: (
+  'phone': 320px,
+  'phonemid': 375px,
+  'phonelg': 500px,
+  'tablet': 768px,
+  'tabletlg': 900px,
+  'notebook': 1100px,
+  'notebookwide': 1300px,
+  'desktop': 1500px,
+  'desktopwide': 1650px,
+);
+
+@mixin transition {
+  transition: var(--fs-transition-function) var(--fs-transition-property)
+    var(--fs-transition-timing);
+}
+
+// pass in either 'narrow', 'wide', or width in px/rem
+@mixin content-wrapper($width) {
+  margin-right: auto;
+  margin-left: auto;
+  width: calc(100% - (var(--fs-grid-padding) * 2));
+
+  @if $width == 'narrow' {
+    max-width: var(--fs-grid-max-width-narrow);
+  } @else if $width == 'wide' {
+    max-width: var(--fs-grid-max-width-wide);
+  } @else {
+    max-width: $width;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin hover-active-focus {
+  @media (hover: hover) {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  white-space: nowrap;
+}
+
+// use on parent container
+@mixin fit-nextjs-image {
+  span {
+    display: block !important;
+    height: 100% !important;
+    width: 100% !important;
+  }
+
+  img {
+    display: block !important;
+    object-fit: cover !important;
+    height: 100% !important;
+    width: 100% !important;
+  }
+}
+
+// use on parent container
+@mixin image-zoom {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  img {
+    display: block;
+    transform: scale(1);
+    transition: transform var(--fs-standard-transition);
+  }
+
+  @include hover-active-focus {
+    img {
+      transform: scale(1.025);
+    }
+  }
+}
+
+@mixin sku-table-widths {
+  // DESCRIPTION
+  &:nth-child(1) {
+    width: 19%;
+
+    @include media('<=notebook') {
+      width: 100%;
+    }
+  }
+
+  // DELIVERY
+  &:nth-child(2) {
+    width: 12%;
+
+    @include media('<=notebook') {
+      width: 100%;
+    }
+  }
+
+  // LEVEL
+  &:nth-child(3) {
+    width: 7%;
+
+    @include media('<=desktopwide') {
+      width: 5%;
+    }
+
+    @include media('<=notebook') {
+      display: none;
+    }
+  }
+
+  // PREVIEW
+  &:nth-child(4) {
+    width: 22.5%;
+
+    @include media('<=desktopwide') {
+      width: 25%;
+    }
+
+    @include media('<=notebookwide') {
+      width: 27.5%;
+    }
+
+    @include media('<=notebook') {
+      display: none;
+    }
+  }
+
+  // SAVE
+  &:nth-child(5) {
+    width: 9%;
+
+    @include media('<=desktopwide') {
+      width: 6.5%;
+    }
+
+    @include media('<=notebookwide') {
+      width: 5.5%;
+    }
+
+    @include media('<=notebook') {
+      display: none;
+    }
+  }
+
+  // PRICE
+  &:nth-child(6) {
+    width: 9%;
+
+    @include media('<=desktopwide') {
+      width: 6.5%;
+    }
+
+    @include media('<=notebookwide') {
+      width: 5.5%;
+    }
+
+    @include media('<=notebook') {
+      display: none;
+    }
+  }
+
+  // ADD QTY
+  &:nth-child(7) {
+    min-width: 115px;
+    text-align: center;
+
+    @include media('<=notebook') {
+      display: none;
+    }
+  }
+}
+
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: inherit;
+}

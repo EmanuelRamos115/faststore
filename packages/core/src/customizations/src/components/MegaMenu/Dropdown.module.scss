@@ -1,0 +1,61 @@
+$maxWidth: 1675px;
+
+.dropdown {
+  position: absolute;
+  z-index: 10;
+  top: 100%;
+  right: 0;
+  left: 0;
+  width: 100%;
+  background: var(--jwp-color-white);
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.08);
+}
+
+.wrapper {
+  display: flex;
+  align-items: stretch;
+  max-width: 100%;
+  min-height: 560px;
+  margin: 0 auto;
+
+  @include media('>desktopwide') {
+    width: $maxWidth;
+  }
+}
+
+.levelTwo {
+  flex: 0 0 226px;
+  padding: var(--fs-spacing-3) 0;
+
+  @include media('>=desktopwide') {
+    flex: 0 0 256px;
+  }
+}
+
+.levelThreeWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+}
+
+.levelThree {
+  width: 100%;
+  border-left: 1px solid var(--jwp-color-border);
+  padding: var(--fs-spacing-4) var(--fs-spacing-5);
+
+  @include media('>desktopwide') {
+    padding: var(--fs-spacing-4) var(--fs-spacing-9);
+  }
+}
+
+.contentBlocks {
+  flex: 0 0 330px;
+  padding: var(--fs-spacing-4) var(--fs-spacing-5);
+  border-left: 1px solid var(--jwp-color-border);
+
+  @include media('>desktop') {
+    flex: 0 0 650px;
+    padding: var(--fs-spacing-11) var(--fs-spacing-6);
+  }
+}

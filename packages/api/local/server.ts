@@ -8,7 +8,7 @@ const serverPort = '4000'
 
 const apiOptions = {
   platform: 'vtex',
-  account: 'storeframework',
+  account: 'jwpepperdev',
   locale: 'en-US',
   environment: 'vtexcommercestable',
   channel: '{"salesChannel":"1"}',

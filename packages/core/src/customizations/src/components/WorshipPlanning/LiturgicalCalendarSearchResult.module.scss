@@ -1,0 +1,60 @@
+.toggleButton {
+  display: flex;
+  align-items: center;
+  column-gap: var(--fs-spacing-4);
+  cursor: pointer;
+  padding: 0;
+}
+
+.chevron {
+  font-size: var(--fs-text-size-4);
+  transform: rotate(0deg);
+  width: var(--fs-spacing-1);
+
+  .searchResultsListItem[data-is-open='true'] & {
+    transform: rotate(90deg);
+  }
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.date {
+  font-size: var(--fs-text-size-0);
+  font-weight: var(--fs-text-weight-bold);
+}
+
+.ulWrapper {
+  background-color: var(--jwp-color-light-grey);
+  border-radius: var(--fs-spacing-1);
+  display: none;
+  margin-top: var(--fs-spacing-3);
+  padding: var(--fs-spacing-3);
+
+  .searchResultsListItem[data-is-open='true'] & {
+    display: block;
+  }
+}
+
+.list {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--fs-spacing-1);
+  margin-top: var(--fs-spacing-3);
+  flex-wrap: wrap;
+}
+
+.listItem {
+  // select child element whose class contains "action"
+  [class*='action'] {
+    background-color: var(--jwp-color-white);
+    color: var(--jwp-color-black);
+
+    @include hover-active-focus {
+      background-color: var(--jwp-color-black);
+      color: var(--jwp-color-white);
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.heading {
+  display: block;
+  font-family: var(--fs-text-face-title);
+  font-size: var(--fs-text-size-2);
+  font-weight: var(--fs-text-weight-semibold);
+  text-transform: uppercase;
+}
+
+.imprintingOptions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fs-spacing-3);
+
+  @include media('>notebook') {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--fs-spacing-3);
+    justify-content: space-between;
+  }
+}
+
+.typeContainer {
+  display: flex;
+  flex: 0 0 100%;
+  flex-direction: column;
+  gap: var(--fs-spacing-2);
+
+  select {
+    width: 100%;
+  }
+
+  @include media('>notebook') {
+    flex: 0 0 357px;
+  }
+}
+
+.quantityContainer {
+  flex: 0 0 100%;
+  display: flex;
+  gap: var(--fs-spacing-1);
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--fs-spacing-2) 0;
+  border-top: 1px solid var(--jwp-color-border);
+  border-bottom: 1px solid var(--jwp-color-border);
+
+  [data-fs-input] {
+    width: 60px;
+    background-color: var(--jwp-color-white);
+  }
+
+  @include media('>notebook') {
+    justify-content: flex-end;
+    flex: 0 0 155px;
+    border: 0;
+    padding: 0;
+    margin-top: 10px;
+  }
+}

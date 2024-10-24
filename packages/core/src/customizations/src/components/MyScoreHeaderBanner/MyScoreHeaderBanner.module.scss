@@ -1,0 +1,66 @@
+.header {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 40% 40%;
+}
+
+.contentWrapper {
+  @include content-wrapper('narrow');
+  display: flex;
+
+  @include media('>=notebook') {
+    justify-content: space-between;
+    align-items: center;
+    height: 140px;
+  }
+
+  @include media('<notebook') {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 240px;
+  }
+}
+
+.logo {
+  height: 40px;
+  width: 179px;
+}
+
+.link {
+  background-color: transparent;
+  text-decoration: underline;
+  padding: 0.625rem 1rem;
+  font-size: var(--fs-text-size-3);
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: transparent;
+  }
+}
+
+.signUpButton {
+  margin-right: var(--fs-spacing-3);
+}
+
+.linkButtons {
+  display: flex;
+  justify-content: center;
+  @include media('>=notebook') {
+    margin-right: var(--fs-spacing-5);
+  }
+}
+
+.buttons {
+  display: flex;
+  @include media('<notebook') {
+    flex-direction: column-reverse;
+  }
+}
+
+.registrationButtons {
+  @include media('<notebook') {
+    padding-top: var(--fs-spacing-5);
+    padding-bottom: var(--fs-spacing-3);
+  }
+}

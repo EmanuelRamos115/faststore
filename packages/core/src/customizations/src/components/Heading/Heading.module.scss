@@ -1,0 +1,66 @@
+.heading {
+  margin: 0;
+  font-family: var(--fs-text-face-title);
+  font-weight: var(--fs-text-weight-medium);
+}
+
+.headingAllCaps {
+  text-transform: uppercase;
+}
+
+.headingBold {
+  font-weight: var(--fs-text-weight-semibold);
+}
+
+.headingDivider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.headingDividerLine {
+  background-color: var(--jwp-color-grey);
+  height: 1px;
+  width: 60px;
+}
+
+.headingLevel1 {
+  // 64px > 32px
+  font-size: clamp(var(--fs-text-size-9), 5vw, var(--fs-text-size-12));
+}
+
+.headingLevel2 {
+  // 48px > 28px
+  font-size: clamp(var(--fs-text-size-7), 5vw, var(--fs-text-size-11));
+}
+
+.headingLevel3 {
+  // 36px > 26px
+  font-size: clamp(var(--fs-text-size-6), 5vw, var(--fs-text-size-10));
+}
+
+.headingLevel4 {
+  // 32px > 24px
+  font-size: clamp(var(--fs-text-size-5), 5vw, var(--fs-text-size-9));
+}
+
+.headingLevel5 {
+  // 30px > 20px
+  font-size: clamp(var(--fs-text-size-4), 5vw, var(--fs-text-size-8));
+}
+
+.headingLevel6 {
+  // 24px > 20px
+  font-size: clamp(var(--fs-text-size-4), 5vw, var(--fs-text-size-5));
+}
+
+.headingLevel7 {
+  // 20px > 16px
+  font-size: clamp(var(--fs-text-size-base), 4vw, var(--fs-text-size-4));
+}
+
+.headingLevel8 {
+  // 16px
+  font-size: var(--fs-text-size-base);
+}

@@ -1,0 +1,47 @@
+.heading {
+  @include layout-content;
+  padding-bottom: var(--fs-spacing-3);
+
+  @include media('>notebook') {
+    padding-bottom: var(--fs-spacing-4);
+  }
+}
+
+.links {
+  @include layout-content;
+  padding-bottom: var(--fs-spacing-3);
+
+  @include media('>notebook') {
+    padding-bottom: var(--fs-spacing-4);
+  }
+
+  ul {
+    @include list-reset;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    width: 100%;
+
+    @include media('>tabletlg') {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  a {
+    display: block;
+    color: inherit;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    margin-bottom: var(--fs-spacing-0);
+    border-radius: var(--fs-radius-4);
+  }
+
+  p {
+    font-size: 1.125rem;
+    font-family: var(--fs-text-face-title);
+    font-weight: var(--fs-text-weight-medium);
+  }
+}

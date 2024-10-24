@@ -1,7 +1,14 @@
-/* WebFonts from core are default,
- * can be override by src/fonts/WebFonts from starter.store along with --fs-text-face-body token
- */
-
-import WebFonts from 'src/fonts/WebFonts'
+const WebFonts = () => {
+  return (
+    <>
+      <link
+        rel="preload"
+        href="https://use.typekit.net/ikt8rzx.css"
+        as="style"
+      />
+      <link rel="stylesheet" href="https://use.typekit.net/ikt8rzx.css" />
+    </>
+  )
+}
 
 export default WebFonts

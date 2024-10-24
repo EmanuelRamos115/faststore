@@ -1,0 +1,23 @@
+.social {
+  display: flex;
+  column-gap: var(--fs-spacing-2);
+  justify-content: center;
+  margin-top: var(--fs-spacing-4);
+}
+
+.socialIcon {
+  @include hover-active-focus {
+    .background {
+      fill: var(--jwp-color-gold);
+    }
+  }
+}
+
+.background {
+  fill: var(--jwp-color-tan);
+  transition: fill var(--fs-standard-transition);
+}
+
+.icon {
+  fill: var(--jwp-color-maroon);
+}

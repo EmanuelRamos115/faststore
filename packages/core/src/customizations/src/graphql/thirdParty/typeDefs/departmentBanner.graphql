@@ -1,0 +1,13 @@
+type DepartmentBanner {
+  banners: [Banner]
+}
+
+type Banner {
+  id: String
+  name: String
+  html: String
+}
+
+type Query {
+  departmentBanner(department: String!): DepartmentBanner
+}

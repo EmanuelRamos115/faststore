@@ -1,0 +1,46 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid var(--jwp-color-maroon-faded);
+  padding: var(--fs-spacing-8) 4rem;
+  text-align: center;
+
+  @include media('<=notebook') {
+    padding: var(--fs-spacing-8) 0.5rem;
+  }
+
+  @include media('<=tablet') {
+    border-top: 1px solid var(--jwp-color-maroon-faded);
+    border-left: none;
+  }
+}
+
+.contactPhoneNumber {
+  font-family: var(--fs-text-face-title);
+  font-size: var(--fs-text-size-base);
+  font-weight: var(--fs-text-weight-medium);
+  margin: var(--fs-spacing-1) 0 var(--fs-spacing-4) 0;
+}
+
+.contactEmail {
+  font-size: var(--fs-text-size-2);
+  margin-bottom: var(--fs-spacing-1);
+}
+
+.contactPhoneNumber,
+.contactEmail {
+  color: inherit;
+  text-decoration: none;
+
+  @include hover-active-focus {
+    text-decoration: underline;
+  }
+}
+
+.contactTimes {
+  font-family: var(--fs-text-face-body);
+  font-size: var(--fs-text-size-2);
+  line-height: 2;
+}

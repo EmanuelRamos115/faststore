@@ -1,0 +1,55 @@
+.accordionContainer {
+  background-color: var(--jwp-color-background-grey);
+}
+
+.accordion {
+  [data-fs-button-wrapper] {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.linkList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--fs-spacing-5);
+
+  @include media('>=tablet') {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include media('>=tabletlg') {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.link {
+  text-decoration: underline;
+  color: var(--fs-text-link-button-blue);
+  font-size: var(--fs-text-size-2);
+  font-weight: 600;
+}
+
+.itemText {
+  font-family: var(--fs-text-face-body);
+  font-size: var(--fs-text-size-2);
+}
+
+.preserveWhitespace {
+  white-space: pre-line;
+}
+
+.listText {
+  margin-left: var(--fs-spacing-5);
+  line-height: 2;
+  list-style: outside;
+}
+
+.boldText {
+  padding-top: var(--fs-spacing-1);
+  font-weight: var(--fs-text-weight-bold);
+}
+.reviewListAnchor {
+  height: 0;
+  overflow: hidden;
+}

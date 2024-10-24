@@ -1,0 +1,122 @@
+$main-row-height-mobile: 54px;
+
+.header {
+  @include media('<=notebook') {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+}
+
+.skipTo {
+  margin: var(--fs-spacing-2);
+  padding: var(--fs-spacing-2);
+  position: fixed;
+  z-index: -1;
+  left: -100%;
+  background: var(--jwp-color-white);
+  border: none;
+  border-radius: var(--fs-radius-2);
+  box-shadow: 0 0.625rem 1.875rem 0 rgba(0, 0, 0, 0.075);
+  opacity: 0;
+  transform: translateY(-50%);
+  transition: transform var(--fs-standard-transition);
+
+  &:focus-within {
+    z-index: 1;
+    left: 0px;
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.topRow {
+  background-color: var(--jwp-color-black);
+}
+
+.topWrapper {
+  @include layout-content;
+  padding: var(--fs-spacing-1) 0;
+
+  @include media('>notebook') {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.topCellNav {
+  display: none;
+
+  @include media('>notebook') {
+    display: block;
+  }
+}
+
+.topCellContact {
+  @include media('>notebook') {
+    padding-right: var(--fs-spacing-4);
+  }
+}
+
+.mainRow {
+  background-color: var(--jwp-color-dark-grey);
+  height: $main-row-height-mobile;
+
+  @include media('>notebook') {
+    height: auto;
+    padding: var(--fs-spacing-3) 0;
+  }
+}
+
+.mainWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include media('>notebook') {
+    @include layout-content;
+    gap: var(--fs-spacing-7);
+  }
+}
+
+.mainCellMobileNav {
+  width: 95px;
+
+  @include media('>notebook') {
+    display: none;
+  }
+}
+
+.mainCellLogo {
+  flex: 0;
+}
+
+.mainCellSearch {
+  display: none;
+
+  @include media('>notebook') {
+    flex: 1;
+    display: block;
+    max-width: 600px;
+    background-color: transparent;
+    padding: 0;
+  }
+}
+
+.mainCellUserActions {
+  width: 95px;
+
+  @include media('>notebook') {
+    width: auto;
+  }
+}
+
+.bottomRow {
+  background-color: var(--jwp-color-light-grey);
+  padding: var(--fs-spacing-1) var(--fs-spacing-3);
+
+  @include media('>notebook') {
+    display: none;
+  }
+}

@@ -1,0 +1,57 @@
+.mobileMenuFooter {
+  background: linear-gradient(
+    -45deg,
+    var(--jwp-color-maroon),
+    var(--jwp-color-dark-grey)
+  );
+}
+
+.utilityNav {
+  padding: var(--fs-spacing-5) var(--fs-spacing-3);
+}
+
+.utilityNavItem {
+  margin-bottom: var(--fs-spacing-3);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.utilityNavLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--fs-spacing-2);
+  color: var(--jwp-color-white);
+  text-decoration: none;
+  font-family: var(--fs-text-face-body);
+  font-size: var(--fs-text-size-2);
+
+  img,
+  svg {
+    width: 1.75rem;
+  }
+}
+
+.pepperlogo {
+  border-top: 1px solid var(--jwp-color-border-light);
+  color: var(--jwp-color-white);
+  padding: var(--fs-spacing-4) 0 var(--fs-spacing-4);
+  text-align: center;
+
+  svg {
+    width: 6.75rem;
+    height: 2rem;
+  }
+}
+
+.socialItems {
+  display: flex;
+  justify-content: center;
+  gap: var(--fs-spacing-3);
+  padding-bottom: var(--fs-spacing-4);
+}
+
+.socialLink {
+  display: block;
+}

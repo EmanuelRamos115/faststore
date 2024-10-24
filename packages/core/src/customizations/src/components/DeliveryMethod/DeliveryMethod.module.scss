@@ -1,0 +1,54 @@
+.wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 1.25rem);
+  left: 0;
+  white-space: nowrap;
+  background-color: var(--jwp-color-white);
+  border: 1px solid var(--jwp-color-grey);
+  border-left: var(--fs-spacing-0) solid var(--jwp-color-badge-turquoise-light);
+  border-radius: var(--fs-radius-2);
+  box-shadow: 0 0.625rem 0.625rem 0 rgba(0, 0, 0, 0.1);
+  font-size: var(--fs-text-size-0);
+  opacity: 0;
+  padding: 0.875rem var(--fs-spacing-3-1\2);
+  visibility: hidden;
+  transition:
+    opacity var(--fs-standard-transition),
+    visibility var(--fs-standard-transition);
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  // create the small triangle
+  // pointing down from the tooltip to the badge
+  &::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: var(--fs-spacing-3-1\2);
+    border: 0.625rem solid transparent;
+    border-top-color: var(--jwp-color-grey);
+  }
+
+  // create a small inner triangle
+  // to cover the border of the ::before triangle
+  &::after {
+    content: '';
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 1.375rem;
+    border: 0.5rem solid transparent;
+    border-top-color: var(--jwp-color-white);
+  }
+
+  p {
+    font-size: inherit;
+  }
+}

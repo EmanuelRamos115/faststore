@@ -1,0 +1,29 @@
+.container {
+  @include content-wrapper('wide');
+}
+
+.line p {
+  overflow: hidden;
+  text-align: center;
+}
+
+.line p:before,
+.line p:after {
+  background-color: var(--jwp-color-medium-grey);
+  content: '';
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50px;
+}
+
+.line p:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.line p:after {
+  left: 0.5em;
+  margin-right: -50%;
+}

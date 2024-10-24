@@ -1,0 +1,33 @@
+.main {
+  padding-bottom: var(--fs-spacing-7);
+  background: var(--jwp-color-light-grey);
+
+  @include media('>notebook') {
+    padding-bottom: var(--fs-spacing-10);
+  }
+}
+
+.layout {
+  @include media('>notebook') {
+    @include layout-content;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+}
+
+.leftColumn {
+  display: none;
+
+  @include media('>notebook') {
+    display: block;
+    flex: 0 0 250px;
+    padding-top: 90px;
+  }
+}
+
+.rightColumn {
+  @include media('>notebook') {
+    flex: 0 1 1220px;
+  }
+}

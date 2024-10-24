@@ -1,0 +1,22 @@
+.message {
+  display: flex;
+  align-items: center;
+  gap: var(--fs-spacing-0);
+  font-size: var(--fs-text-size-1);
+  font-weight: var(--fs-text-weight-bold);
+  color: var(--jwp-color-badge-red-secondary);
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  &.small {
+    font-size: var(--fs-text-size-00);
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}

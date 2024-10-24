@@ -1,0 +1,53 @@
+.banner {
+  position: relative;
+}
+
+.backgroundImageWrapper {
+  height: 22.5vw;
+  overflow: hidden;
+  width: 100%;
+
+  @include media('<=notebookwide') {
+    height: 45vw;
+  }
+
+  @include media('<=notebook') {
+    height: 67.5vw;
+  }
+
+  @include media('<=tablet') {
+    height: 90vw;
+  }
+}
+
+.backgroundImage {
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+.contentWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  color: var(--jwp-color-white);
+  text-align: center;
+
+  @include media('<=notebook') {
+    width: 65%;
+  }
+
+  @include media('<=tablet') {
+    width: 95%;
+  }
+}
+
+.icon {
+  max-width: 9.25rem;
+}

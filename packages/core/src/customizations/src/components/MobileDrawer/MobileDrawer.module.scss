@@ -1,0 +1,71 @@
+.mobileDrawerBackdrop {
+  background: rgba(0, 0, 0, 0.15);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity var(--fs-standard-transition);
+  opacity: 0;
+  pointer-events: none;
+
+  &[data-drawer-is-open='true'] {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: var(--fs-z-index-top); // 1
+  }
+}
+
+.mobileDrawerWrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: var(--fs-z-index-high); // 2
+  width: 100%;
+  transition: transform var(--fs-standard-transition);
+
+  &[data-drawer-is-open='true'] {
+    transform: translateY(0vh);
+  }
+
+  &[data-drawer-is-open='false'] {
+    transform: translateY(100vh);
+  }
+}
+
+.mobileDrawerHeader {
+  background-color: var(--jwp-color-dark-grey);
+  border-radius: var(--fs-radius-3) var(--fs-radius-3) 0 0;
+  color: var(--jwp-color-white);
+  font-family: var(--fs-text-face-title);
+  font-size: var(--fs-text-size-base);
+  font-weight: var(--fs-text-weight-medium);
+  line-height: 1.25;
+  padding: var(--fs-spacing-2) var(--fs-spacing-6);
+  position: relative;
+  text-align: center;
+}
+
+.closeMobileDrawerButton {
+  position: absolute;
+  top: var(--fs-spacing-2);
+  right: var(--fs-spacing-2);
+  color: inherit;
+}
+
+.mobileDrawerBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fs-spacing-1);
+  background-color: var(--jwp-color-white);
+  border-bottom: 1px solid var(--jwp-color-grey);
+  padding: var(--fs-spacing-3-1\2);
+}
+
+.mobileDrawerFooter {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  background: var(--jwp-color-light-grey);
+  padding: var(--fs-spacing-3-1\2);
+}

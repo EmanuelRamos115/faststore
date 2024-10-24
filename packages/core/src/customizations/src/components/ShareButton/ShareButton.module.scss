@@ -1,0 +1,13 @@
+.shareButton {
+  padding: 0;
+}
+
+.shareIcon {
+  color: var(--jwp-color-black);
+  fill: var(--jwp-color-white);
+  cursor: pointer;
+
+  .plp & {
+    width: 15px;
+  }
+}

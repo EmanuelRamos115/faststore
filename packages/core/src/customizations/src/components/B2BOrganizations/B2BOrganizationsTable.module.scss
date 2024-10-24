@@ -1,0 +1,39 @@
+.organizationsTable {
+  @import '@faststore/ui/src/components/molecules/Table/styles.scss';
+  [data-fs-table-row] {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 8px 0;
+    border: 0 !important;
+    &:first-child {
+      margin-top: 0;
+    }
+    &:nth-child(odd) {
+      background: #dfdcdc;
+    }
+    &:nth-child(2n) {
+      background: #f5f4f4;
+    }
+  }
+  [data-fs-table-cell] {
+    border: 0;
+    padding: 4px 16px;
+  }
+  [data-fs-table] {
+    --fs-table-cell-padding-x: var(--fs-spacing-2);
+    --fs-table-cell-padding-y: var(--fs-spacing-3);
+
+    max-height: 50vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    white-space: normal;
+  }
+  [data-fs-table-row-selected='true'] {
+    background-color: var(--jwp-color-gold) !important;
+  }
+  [data-fs-table-row-clickable],
+  [data-fs-table-row-clickable] label {
+    cursor: pointer;
+  }
+}

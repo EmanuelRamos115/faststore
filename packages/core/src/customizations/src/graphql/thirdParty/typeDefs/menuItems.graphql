@@ -1,0 +1,16 @@
+type MenuItem {
+  id: ID!
+  parentId: String
+  type: String!
+  position: Int!
+  title: String!
+  url: String
+  imageUrl: String
+  iconUrl: String
+  altText: String
+  ctaText: String
+}
+
+type Query {
+  menuItems: [MenuItem]
+}

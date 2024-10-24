@@ -1,0 +1,40 @@
+type Warehouse {
+  """
+  Unique identifier for the warehouse
+  """
+  id: ID!
+  """
+  Human friendly name of the warehouse
+  """
+  name: String!
+}
+
+type Inventory {
+  """
+  QTY in warehouse, excluding reserved
+  """
+  availableQuantity: Int!
+  """
+  Infinite inventory - ignore availableQuantity if this is true
+  """
+  hasUnlimitedQuantity: Boolean!
+  """
+  Warehouse where the inventory is located
+  """
+  warehouse: Warehouse!
+}
+
+extend type StoreProduct {
+  """
+  Get list of inventory for the product by warehouse
+  """
+  inventory: [Inventory!]!
+  """
+  Get video URLs for the product
+  """
+  videos: [String!]!
+  """
+  Get assembly options
+  """
+  assemblyOptions: [AssemblyOption!]!
+}

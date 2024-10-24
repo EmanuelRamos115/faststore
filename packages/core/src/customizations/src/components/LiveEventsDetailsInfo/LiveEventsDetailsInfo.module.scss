@@ -1,0 +1,105 @@
+.sectionWrapper {
+  background-color: var(--jwp-color-light-grey);
+  padding: var(--fs-spacing-8) 0;
+}
+
+.infoWrapper {
+  @include content-wrapper('narrow');
+
+  background-color: var(--jwp-color-white);
+  border-radius: var(--fs-radius-4);
+  box-shadow: 0 var(--fs-spacing-2) var(--fs-spacing-5) 0 rgba(0, 0, 0, 0.08);
+  padding: var(--fs-spacing-6);
+
+  @include media('<=tablet') {
+    padding: var(--fs-spacing-3-1\2);
+  }
+}
+
+.infoContentWrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--fs-spacing-3);
+
+  @include media('<=tablet') {
+    flex-direction: column;
+    gap: var(--fs-spacing-3-1\2);
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--jwp-color-grey);
+    margin-bottom: var(--fs-spacing-6);
+    padding-bottom: var(--fs-spacing-6);
+
+    @include media('<=tablet') {
+      margin-bottom: var(--fs-spacing-3-1\2);
+      padding-bottom: var(--fs-spacing-3-1\2);
+    }
+  }
+}
+
+.infoHeading {
+  text-transform: uppercase;
+  width: 33%;
+
+  @include media('<=tablet') {
+    width: 100%;
+  }
+}
+
+.infoColumn {
+  flex: 1;
+
+  @include media('<=tablet') {
+    width: 100%;
+  }
+}
+
+.descriptionWrapper {
+  margin-top: var(--fs-spacing-4);
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.mapWrapper {
+  height: 22.25rem;
+  margin-top: var(--fs-spacing-3-1\2);
+  overflow: hidden;
+  width: 100%;
+
+  @include media('<=tablet') {
+    height: 24.25rem;
+  }
+
+  iframe {
+    border: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.contactLink {
+  color: var(--jwp-color-blue);
+  font-weight: var(--fs-text-weight-bold);
+  text-decoration: underline;
+}
+
+.websiteWrapper {
+  margin: var(--fs-spacing-4) 0;
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.shareWrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--fs-spacing-1);
+
+  button {
+    transform: translateY(2px);
+  }
+}

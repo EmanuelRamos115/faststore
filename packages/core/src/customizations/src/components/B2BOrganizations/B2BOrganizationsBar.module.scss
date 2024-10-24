@@ -1,0 +1,38 @@
+.b2BOrganizationsBarContainer {
+  @import '@faststore/ui/src/components/molecules/SearchInputField/styles.scss';
+  @import '@faststore/ui/src/components/molecules/SearchDropdown/styles.scss';
+  @import '@faststore/ui/src/components/molecules/SearchAutoComplete/styles.scss';
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--fs-spacing-4);
+  padding: var(--fs-spacing-2);
+
+  [data-fs-search-input-field] {
+    --fs-search-input-field-height-desktop: var(--fs-spacing-7);
+  }
+
+  &[data-fs-organizataion-modal='true'] > :last-child {
+    margin-left: auto;
+  }
+
+  [data-fs-autocomplete-input] {
+    position: relative;
+  }
+
+  [data-fs-link] {
+    cursor: pointer;
+  }
+
+  @include media('<=tabletlg') {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--fs-spacing-2);
+
+    &[data-fs-organizataion-modal='true'] > :last-child,
+    &[data-fs-organizataion-modal='true'] > :last-child [data-fs-button] {
+      width: 100%;
+    }
+  }
+}

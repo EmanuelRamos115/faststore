@@ -1,0 +1,24 @@
+.section {
+  @include content-wrapper('narrow');
+  text-align: center;
+  padding: var(--fs-spacing-8) 0;
+}
+
+.tagList {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  row-gap: var(--fs-spacing-3);
+  column-gap: var(--fs-spacing-4);
+  justify-content: center;
+  margin-top: var(--fs-spacing-5);
+
+  @include media('>tablet') {
+    flex-direction: row;
+    margin-top: var(--fs-spacing-6);
+  }
+}
+
+.tag {
+  white-space: nowrap;
+}

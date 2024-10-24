@@ -1,0 +1,12 @@
+type SubcollectionProducts {
+  Data: [SubcollectionProduct]
+  TotalPage: Int
+}
+
+type SubcollectionProduct {
+  SkuId: Int
+}
+
+type Query {
+  getSubcollectionId(collectionId: String!): SubcollectionProducts
+}

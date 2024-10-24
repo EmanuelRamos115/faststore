@@ -1,0 +1,101 @@
+.action {
+  background-color: var(--jwp-color-maroon);
+  border-radius: var(--fs-radius-rounded);
+  color: var(--jwp-color-white);
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--fs-text-face-title);
+  font-size: var(--fs-text-size-2);
+  font-weight: var(--fs-text-weight-medium);
+  line-height: 1.15;
+  padding: 0.625rem 2.5rem;
+  text-decoration: none;
+  transition:
+    background-color var(--fs-standard-transition),
+    border-color var(--fs-standard-transition),
+    color var(--fs-standard-transition);
+
+  &:disabled {
+    opacity: 30%;
+
+    @include hover-active-focus {
+      cursor: not-allowed;
+    }
+  }
+
+  @include hover-active-focus {
+    background-color: var(--jwp-color-maroon-accent);
+  }
+}
+
+.neutralDark {
+  background-color: var(--jwp-color-black);
+  color: var(--jwp-color-white);
+
+  @include hover-active-focus {
+    background-color: var(--jwp-color-black-accent);
+  }
+}
+
+.neutralLight {
+  background-color: transparent;
+  border: 1px solid var(--jwp-color-black);
+  color: var(--jwp-color-black);
+
+  @include hover-active-focus {
+    background-color: var(--jwp-color-black);
+    color: var(--jwp-color-white);
+  }
+}
+
+.naked {
+  background-color: var(--jwp-color-white);
+  color: var(--jwp-color-black);
+
+  @include hover-active-focus {
+    background-color: var(--jwp-color-light-grey);
+    color: var(--jwp-color-maroon);
+  }
+}
+
+.important {
+  background-color: var(--jwp-color-green);
+  color: var(--jwp-color-white);
+  font-weight: var(--fs-text-weight-semibold);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  @include hover-active-focus {
+    background-color: var(--jwp-color-green-accent);
+  }
+}
+
+.myScoreOrange {
+  background-color: var(--jwp-color-myscore-orange);
+  color: var(--jwp-color-black);
+
+  @include hover-active-focus {
+    background-color: var(--jwp-color-light-grey);
+  }
+}
+
+.myScoreBlue {
+  background-color: var(--jwp-color-myscore-blue);
+  color: var(--jwp-color-white);
+
+  @include hover-active-focus {
+    background-color: var(--jwp-color-black-accent);
+  }
+}
+
+.small {
+  padding: 0.375rem 1.75rem;
+}
+
+.large {
+  padding: 1rem 3rem;
+}
+
+.fullWidth {
+  width: 100%;
+}

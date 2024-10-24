@@ -1,0 +1,57 @@
+.section {
+  @include media('>tablet') {
+    @include layout-content;
+  }
+}
+
+.heading {
+  @include layout-content;
+  margin-bottom: var(--fs-spacing-4);
+
+  span {
+    font-size: var(--fs-text-size-5);
+  }
+
+  @include media('>tablet') {
+    width: 100%;
+    margin-bottom: var(--fs-spacing-7);
+  }
+}
+
+.cartContent {
+  @include media('>notebook') {
+    display: flex;
+    flex-direction: row;
+    gap: var(--fs-spacing-8);
+  }
+}
+
+.cartItems {
+  @include layout-content;
+
+  @include media('>tablet') {
+    width: 100%;
+  }
+
+  @include media('>notebook') {
+    width: 68%;
+  }
+}
+
+.cartItemsActions {
+  border-top: 1px solid var(--jwp-color-border);
+  padding: var(--fs-spacing-4) 0;
+  display: flex;
+  gap: var(--fs-spacing-1);
+  justify-content: space-between;
+
+  @include media('>phonelg') {
+    justify-content: flex-end;
+  }
+}
+
+.cartSummary {
+  @include media('>notebook') {
+    flex: 0 0 32%;
+  }
+}

@@ -1,0 +1,49 @@
+type Fields {
+  key: String!
+  value: String!
+}
+
+type CustomApp {
+  fields: [Fields!]!
+  id: String!
+  major: Int!
+}
+
+type CustomData {
+  customApps: [CustomApp!]!
+}
+
+type Item {
+  id: String!
+  skuName: String!
+  quantity: Int!
+  listPrice: Int!
+  sellingPrice: Int!
+  seller: String!
+  parentItemIndex: Int
+  parentAssemblyBinding: String
+}
+
+type Order {
+  orderFormId: String!
+  customData: CustomData
+  marketingData: MarketingData
+  items: [Item!]!
+}
+
+type MarketingData {
+  utmCampaign: String
+  utmMedium: String
+}
+
+type Query {
+  orderForm(id: String!): Order!
+  customData(appId: String!, field: String!): String
+}
+
+type Mutation {
+  addExtraParts(extraOrderData: String!): Boolean
+  removeExtraParts(skuGtin: String): Boolean
+  addFolderImprinting(data: String!): Boolean
+  removeFolderImprinting(skuGtin: String): Boolean
+}

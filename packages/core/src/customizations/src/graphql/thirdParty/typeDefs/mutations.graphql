@@ -1,0 +1,28 @@
+type CreateOrganizationERPResponse {
+  message: String
+  requestId: String
+}
+
+input CreateOrganizationERPInput {
+  PARENT_ID: String
+  ACCOUNT_TYPE: String
+  ACCOUNT_NAME: String
+  ATTENTION: String
+  ADDRESS: String
+  CITY: String
+
+  COUNTRY: String
+  POSTAL_CODE: String
+  STATE_PROVINCE: String
+  CUSTOMER_CLASSIFICATION: String
+  ORGANIZATION_DETAIL: String
+  CUSTOMER_ROLE: String
+  PHONE_NUMBER: String
+  VTEX_ID: String
+}
+
+type Mutation {
+  createOrganizationERP(
+    input: CreateOrganizationERPInput
+  ): CreateOrganizationERPResponse
+}

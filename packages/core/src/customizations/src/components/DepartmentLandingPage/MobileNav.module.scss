@@ -1,0 +1,27 @@
+.section {
+  background: var(--jwp-color-light-grey);
+  padding: var(--fs-spacing-3) 0;
+
+  @include media('>notebook') {
+    display: none;
+  }
+}
+
+.container {
+  @include layout-content;
+}
+
+.button {
+  @include input-focus-ring;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  height: 54px;
+  width: 100%;
+  font-weight: var(--fs-text-weight-bold);
+  border: 1px solid var(--fs-color-neutral-2);
+  border-radius: 4px;
+  background-color: var(--jwp-color-white);
+  padding: 0 var(--fs-spacing-3);
+}

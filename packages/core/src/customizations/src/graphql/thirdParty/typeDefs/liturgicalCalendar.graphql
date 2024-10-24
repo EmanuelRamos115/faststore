@@ -1,0 +1,13 @@
+type LiturgicalCalendar {
+  season: String
+  year: String
+  date: String
+  title: String
+  type: String
+  calendar: String
+  dateTitle: String
+}
+
+type Query {
+  liturgicalCalendar: [LiturgicalCalendar]
+}

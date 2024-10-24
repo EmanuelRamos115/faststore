@@ -1,0 +1,55 @@
+.main {
+  background: var(--jwp-color-white);
+  padding: var(--fs-spacing-6) 0 var(--fs-spacing-5);
+
+  @include media('>notebook') {
+    background: var(--jwp-color-light-grey);
+    padding: var(--fs-spacing-8) 0 var(--fs-spacing-5);
+  }
+}
+
+.layout {
+  @include media('>notebook') {
+    @include layout-content;
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+  }
+}
+
+.leftColumn {
+  display: none;
+
+  @include media('>notebook') {
+    display: block;
+    flex: 0 0 250px;
+  }
+}
+
+.rightColumn {
+  @include media('>notebook') {
+    flex: 1 1 100%;
+    overflow: hidden;
+  }
+}
+
+.contentSection {
+  padding-bottom: var(--fs-spacing-6);
+
+  + .contentSection {
+    padding-top: var(--fs-spacing-6);
+    border-top: 1px solid var(--jwp-color-border);
+  }
+
+  @include media('<=notebook') {
+    @include content-wrapper('wide');
+  }
+
+  @include media('>notebook') {
+    padding-bottom: var(--fs-spacing-10);
+
+    + .contentSection {
+      padding-top: var(--fs-spacing-10);
+    }
+  }
+}

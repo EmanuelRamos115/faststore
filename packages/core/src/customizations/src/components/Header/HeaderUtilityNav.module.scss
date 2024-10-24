@@ -1,0 +1,31 @@
+.utilityNavMenu {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.utilityNavItem {
+  padding: 4px var(--fs-spacing-2) 4px 0;
+}
+
+.utilityNavItem + .utilityNavItem {
+  border-left: 1px solid #595f64;
+  padding-left: var(--fs-spacing-2);
+}
+
+.utilityNavLink {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--fs-text-size-0);
+  color: var(--jwp-color-white);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.utilityNavLinkIcon {
+  width: 16px;
+}

@@ -1,0 +1,25 @@
+.levelFourLink {
+  > a,
+  > span {
+    display: block;
+    padding: var(--fs-spacing-1) 0 var(--fs-spacing-1) var(--fs-spacing-0);
+    text-decoration: none;
+    color: var(--jwp-color-black);
+    font-family: var(--fs-text-face-body);
+    font-size: var(--fs-text-size-2);
+    font-weight: var(--fs-text-weight-regular);
+  }
+
+  @include hover {
+    > a {
+      color: var(--jwp-color-maroon);
+      background-color: var(--jwp-color-light-grey);
+    }
+
+    img {
+      // Generated using: https://codepen.io/sosuke/pen/Pjoqqp
+      filter: brightness(0) saturate(100%) invert(12%) sepia(37%)
+        saturate(3974%) hue-rotate(321deg) brightness(92%) contrast(107%);
+    }
+  }
+}

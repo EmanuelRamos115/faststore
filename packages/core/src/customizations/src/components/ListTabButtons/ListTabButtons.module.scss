@@ -1,0 +1,55 @@
+.listTabButtonsWrapper {
+  @include content-wrapper('narrow');
+
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--fs-spacing-3);
+}
+
+.listTabButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--fs-spacing-3);
+  flex-direction: row;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  flex: 1 1 calc(25% - var(--fs-spacing-3));
+  justify-content: space-between;
+  background-color: var(--jwp-color-light-grey);
+  border-radius: var(--fs-spacing-0);
+  color: var(--jwp-color-black);
+  padding: var(--fs-spacing-5) var(--fs-spacing-3-1\2);
+  text-decoration: none;
+  transition:
+    background-color var(--fs-standard-transition),
+    box-shadow var(--fs-standard-transition);
+
+  @include hover-active-focus {
+    background-color: var(--jwp-color-white);
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.08);
+  }
+
+  @include media('<=notebook') {
+    flex: 1 1 calc(50% - var(--fs-spacing-3));
+  }
+
+  @include media('<=tablet') {
+    flex: 1 1 100%;
+  }
+}
+
+.linkText {
+  font-family: var(--fs-text-face-title);
+  font-size: var(--fs-text-size-4);
+  font-weight: var(--fs-text-weight-medium);
+  padding-right: var(--fs-spacing-3-1\2);
+}
+
+.iconWrapper {
+  border-left: 1px solid var(--jwp-color-medium-grey);
+  display: flex;
+  padding-left: var(--fs-spacing-3-1\2);
+}

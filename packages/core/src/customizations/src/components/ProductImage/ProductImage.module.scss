@@ -1,0 +1,28 @@
+.link {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.linkSheetMusic {
+  background-color: var(--jwp-color-light-grey);
+}
+
+.imageWrapper {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  width: auto;
+
+  .linkSheetMusic & {
+    background-color: var(--jwp-color-white);
+    top: var(--fs-spacing-2);
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
+  }
+}
+
+.image {
+  object-fit: contain;
+  width: auto;
+}

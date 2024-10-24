@@ -1,0 +1,22 @@
+type AssemblyOption {
+  id: ID!
+  name: String!
+  required: Boolean!
+  composition: Composition
+}
+
+type Composition {
+  minQuantity: Int!
+  maxQuantity: Int!
+  items: [CompositionItem!]!
+}
+
+type CompositionItem {
+  id: ID!
+  gtin: String!
+  minQuantity: Int!
+  maxQuantity: Int!
+  initialQuantity: Int!
+  priceTable: String
+  seller: String
+}

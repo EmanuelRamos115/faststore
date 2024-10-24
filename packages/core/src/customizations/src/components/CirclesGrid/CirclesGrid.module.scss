@@ -1,0 +1,110 @@
+.circlesGridWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fs-spacing-6);
+  background-color: var(--jwp-color-light-grey);
+  padding: var(--fs-spacing-12) 0;
+}
+
+.headingWrapper {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.gridList {
+  @include content-wrapper('narrow');
+
+  display: grid;
+  gap: var(--fs-spacing-9) var(--fs-spacing-11); // row-gap, column-gap
+  grid-template-columns: repeat(7, 1fr);
+
+  @include media('<=desktop') {
+    gap: var(--fs-spacing-8) var(--fs-spacing-10);
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @include media('<=notebook') {
+    gap: var(--fs-spacing-8);
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  @include media('<=tablet') {
+    gap: var(--fs-spacing-6);
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.gridListItem {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  grid-column: span 1;
+  row-gap: var(--fs-spacing-3);
+  text-align: center;
+
+  @include media('<=desktop') {
+    // select the last 3 items in the grid
+    &:nth-last-child(-n + 3) {
+      display: none;
+    }
+  }
+
+  @include media('<=notebook') {
+    // select the next last 6 items in the grid
+    &:nth-last-child(-n + 6) {
+      display: none;
+    }
+  }
+
+  @include media('<=tablet') {
+    // select all but the first 9 items in the grid
+    &:nth-child(n + 10) {
+      display: none;
+    }
+  }
+
+  .circlesGridWrapper[data-is-grid-expanded='true'] & {
+    display: flex;
+  }
+}
+
+.gridListItemImageWrapper {
+  @include fit-nextjs-image;
+
+  @include media('<=desktop') {
+    height: var(--fs-spacing-13);
+    width: var(--fs-spacing-13);
+  }
+
+  @include media('<=phonelg') {
+    height: var(--fs-spacing-11);
+    width: var(--fs-spacing-11);
+  }
+}
+
+.gridListItemImageLink {
+  @include image-zoom;
+
+  border-radius: 50%;
+}
+
+.gridListItemLink {
+  color: var(--jwp-color-black);
+  font-size: var(--fs-text-size-base);
+  font-weight: var(--fs-text-weight-semibold);
+  text-decoration: none;
+
+  @include hover-active-focus {
+    text-decoration: underline;
+  }
+}
+
+.mobileCtaWrapper {
+  display: none;
+
+  @include media('<=tablet') {
+    display: block;
+    text-align: center;
+  }
+}

@@ -1,0 +1,192 @@
+// in the design it is 500px wide, but we need just a little extra
+$sideBarMaxWidth: 520px;
+
+.sideBar {
+  max-width: $sideBarMaxWidth;
+  width: 100%;
+
+  [data-fs-badge] {
+    display: none;
+  }
+
+  [data-fs-slide-over-header] {
+    // using the same data attribuite as in the theme layer for consistency:
+    // .theme [data-fs-slide-over-header-icon]
+    [data-fs-slide-over-header-icon] {
+      position: absolute;
+      top: 0.75rem;
+      right: 1rem;
+
+      @include hover-active-focus {
+        // prevent color changing to default of black on these states
+        color: var(--jwp-color-white);
+
+        [data-fs-button-wrapper] {
+          color: var(--jwp-color-white);
+        }
+      }
+    }
+  }
+
+  [data-fs-cart-sidebar-title] {
+    justify-content: center;
+    font-family: var(--fs-text-face-title);
+    font-weight: var(--fs-text-weight-medium);
+  }
+
+  [data-fs-alert] {
+    background-color: var(--jwp-color-light-grey);
+  }
+
+  [data-fs-alert-content] {
+    font-size: var(--fs-text-size-2);
+    margin-left: var(--fs-spacing-1);
+  }
+
+  [data-fs-cart-sidebar-footer] {
+    box-shadow: none;
+    position: relative;
+    padding-top: var(--fs-spacing-5);
+    padding-bottom: var(--fs-spacing-6);
+    background-color: var(--jwp-color-light-grey);
+  }
+
+  [data-fs-cart-sidebar-list] {
+    row-gap: 0;
+    padding: var(--fs-spacing-4) var(--fs-spacing-3) 0;
+  }
+
+  [data-fs-order-summary] {
+    padding-top: var(--fs-spacing-1);
+    margin-top: var(--fs-spacing-3);
+    border-top: 1px solid var(--jwp-color-grey);
+  }
+
+  [data-fs-order-summary-total-label] {
+    font-family: var(--fs-text-face-title);
+    font-size: var(--fs-text-size-6);
+    font-weight: var(--fs-text-weight-medium);
+  }
+
+  [data-fs-order-summary-total-value] {
+    font-size: var(--fs-text-size-4);
+    font-weight: var(--fs-text-weight-bold);
+    color: var(--jwp-color-maroon);
+  }
+
+  [data-fs-order-summary-total] {
+    padding: var(--fs-spacing-1) 0;
+  }
+
+  [data-fs-image] {
+    object-fit: contain;
+  }
+}
+
+.cartNumber {
+  font-family: var(--fs-text-face-title);
+  font-size: var(--fs-text-size-4);
+  font-weight: var(--fs-text-weight-medium);
+}
+
+.footerText + .footerText {
+  margin-top: var(--fs-spacing-2);
+}
+
+.mainActions {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--fs-spacing-3);
+  margin-bottom: var(--fs-spacing-3);
+  padding: var(--fs-spacing-4) var(--fs-spacing-3) 0 var(--fs-spacing-4);
+
+  [data-fs-link] {
+    font-weight: var(--fs-text-weight-semibold);
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+.subActions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--fs-spacing-4);
+  padding-bottom: var(--fs-text-size-9);
+  border-bottom: 1px solid var(--jwp-color-grey);
+  margin: 0 var(--fs-spacing-3);
+}
+
+.subLink {
+  display: flex;
+  align-items: center;
+  column-gap: var(--fs-spacing-0);
+  color: var(--jwp-color-blue);
+  font-size: var(--fs-text-size-2);
+  font-weight: var(--fs-text-weight-semibold);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.subLinkDivider {
+  width: 1px;
+  height: 32px;
+  background-color: var(--jwp-color-grey);
+}
+
+.altArrow {
+  width: 12px;
+}
+
+.icon {
+  color: var(--jwp-color-green);
+}
+
+$inputHeightWidthMultiplier: 1.25;
+
+$inputHeightDesktop: 40px;
+$inputWidthDesktop: $inputHeightDesktop * $inputHeightWidthMultiplier;
+
+$inputHeightMobile: 30px;
+$inputWidthMobile: $inputHeightMobile * $inputHeightWidthMultiplier;
+
+.actions {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 22%;
+
+  [data-fs-input] {
+    height: $inputHeightDesktop;
+    width: $inputWidthDesktop;
+    background-color: var(--jwp-color-light-grey);
+    border: 1px solid var(--jwp-color-grey);
+    border-radius: var(--fs-radius-2);
+    text-align: center;
+
+    @include media('<=tablet') {
+      font-size: var(--fs-text-size-2);
+      height: $inputHeightMobile;
+      width: $inputWidthMobile;
+    }
+  }
+
+  [data-fs-cart-item-remove-button] {
+    position: relative;
+    background-color: var(--jwp-color-light-grey);
+    border-radius: var(--fs-radius-circle);
+  }
+}
+
+.productAlsoBought {
+  margin-bottom: var(--fs-spacing-6);
+}
+
+.actionsButtonDisabled {
+  opacity: 30%;
+
+  @include hover-active-focus {
+    cursor: not-allowed;
+  }
+}

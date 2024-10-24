@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--fs-spacing-2);
+
+  > p,
+  > a {
+    line-height: 1;
+    text-align: center;
+    font-size: var(--fs-text-size-0);
+  }
+
+  > a {
+    color: var(--jwp-color-blue);
+    text-decoration: underline;
+  }
+}
+
+.availabilityMessage {
+  display: none;
+
+  .cartPage & {
+    @include media('>tablet') {
+      display: block;
+    }
+  }
+}

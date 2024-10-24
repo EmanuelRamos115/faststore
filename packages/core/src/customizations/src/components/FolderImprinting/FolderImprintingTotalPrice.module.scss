@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--fs-spacing-3) 0 0;
+}
+
+.price {
+  font-size: var(--fs-text-size-3);
+  text-align: right;
+}
+
+.label {
+  font-weight: var(--fs-text-weight-bold);
+}
+
+.value {
+  display: inline-block;
+  min-width: 100px;
+  padding-left: var(--fs-spacing-1);
+  font-size: var(--fs-text-size-5);
+  font-weight: var(--fs-text-weight-semibold);
+}
+
+.valueTotal {
+  color: var(--jwp-color-maroon);
+  font-weight: var(--fs-text-weight-bold);
+}

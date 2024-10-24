@@ -1,0 +1,46 @@
+.textInput {
+  @include input-focus-ring;
+  transition: all var(--fs-standard-transition);
+  border: 1px solid var(--fs-color-neutral-2);
+  justify-content: space-between;
+  font-size: var(--fs-text-size-2);
+  font-weight: var(--fs-text-weight-medium);
+  font-family: var(--fs-text-face-body);
+
+  border-radius: 2px;
+  line-height: 1.75;
+  background-color: var(--jwp-color-white);
+
+  &:focus,
+  &:focus-visible,
+  &:focus-visible:hover {
+    border-color: var(--fs-color-neutral-2);
+  }
+
+  &:disabled {
+    opacity: 40%;
+
+    @include hover-active-focus {
+      cursor: not-allowed;
+    }
+  }
+
+  &:invalid,
+  &:focus:invalid,
+  &:focus-visible:invalid {
+    border-color: var(--jwp-color-error-red);
+  }
+}
+
+.small {
+  padding: 0.25rem 0.5rem;
+  font-size: var(--fs-text-size-0);
+}
+
+.medium {
+  padding: 0.75rem 1rem;
+}
+
+.fullWidth {
+  width: 100%;
+}

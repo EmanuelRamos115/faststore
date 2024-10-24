@@ -1,0 +1,42 @@
+.sliderButton {
+  height: 40px;
+  width: 40px;
+  border: 1.5px solid var(--jwp-color-white);
+  border-radius: var(--fs-radius-circle);
+  transition:
+    background-color var(--fs-standard-transition),
+    color var(--fs-standard-transition);
+  z-index: 1;
+
+  // needed to prevent default color of transparent on mobile from react-slick
+  color: var(--jwp-color-white) !important;
+
+  &::before {
+    display: none;
+  }
+
+  @media (hover: hover) {
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: var(--jwp-color-white-10-percent);
+      color: var(--jwp-color-white);
+    }
+  }
+}
+
+.sliderButtonPrev {
+  left: 2.75%;
+
+  @include media('<=notebook') {
+    left: 2.5%;
+  }
+}
+
+.sliderButtonNext {
+  right: 2.75%;
+
+  @include media('<=notebook') {
+    right: 2.5%;
+  }
+}

@@ -1,0 +1,22 @@
+type Mutation {
+  addToCart(items: [ItemInput!]!): StoreCart
+}
+
+input ItemInput {
+  id: Int
+  quantity: Float
+  seller: ID
+  uniqueId: String
+  inputValues: InputValues
+  options: [AssemblyOptionInput]
+}
+
+input AssemblyOptionInput {
+  assemblyId: String!
+  id: ID
+  quantity: Int
+  seller: String
+  inputValues: InputValues
+}
+
+scalar InputValues

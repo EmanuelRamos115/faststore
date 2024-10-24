@@ -1,0 +1,15 @@
+.button {
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  background-color: var(--jwp-color-light-grey);
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  @include hover-active-focus {
+    background-color: var(--jwp-color-grey);
+  }
+}

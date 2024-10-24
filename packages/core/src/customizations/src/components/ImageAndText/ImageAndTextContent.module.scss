@@ -1,0 +1,61 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  @include media('<=desktop') {
+    gap: 1rem;
+    padding: 7.5rem 0;
+  }
+
+  @include media('<=tablet') {
+    padding: var(--fs-mobile-x-padding) var(--fs-mobile-x-padding) 0
+      var(--fs-mobile-x-padding);
+  }
+
+  & > * {
+    margin: 0;
+  }
+
+  &.fullBleed {
+    width: 50%;
+
+    @include media('<=desktop') {
+      width: 70%;
+    }
+
+    @include media('<=notebook') {
+      width: 80%;
+    }
+
+    @include media('<=tablet') {
+      width: 100%;
+    }
+  }
+
+  &.contained {
+    @include media('<=notebook') {
+      width: 80%;
+    }
+
+    @include media('<=tablet') {
+      width: 100%;
+    }
+  }
+}
+
+.info {
+  opacity: 0.8; // using opacity to imitate lighter color
+}
+
+.divider {
+  background-color: var(--jwp-color-maroon);
+  height: 0.25rem;
+  width: 2.5rem;
+}
+
+.ctaRow {
+  display: flex;
+  gap: 1rem;
+}

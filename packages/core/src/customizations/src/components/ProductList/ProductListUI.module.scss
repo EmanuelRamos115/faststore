@@ -1,0 +1,67 @@
+$maxProductWidth: 240px;
+$carouselButtonWidth: 30px;
+$carouselPadding: calc($carouselButtonWidth + 1rem);
+
+.productList {
+  padding: 3.75rem 0
+    calc(
+      3.75rem -
+        (
+          var(--jwp-product-card-shadow-blur) +
+            var(--jwp-product-card-shadow-offset)
+        )
+    );
+}
+
+.innerWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: var(--fs-spacing-3);
+}
+
+.carouselWrapper {
+  color: var(--jwp-color-black);
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1460px;
+  padding: 0 calc($carouselButtonWidth + 1rem);
+}
+
+.isDepartmentCarousel.carouselWrapper5Products {
+  @media (min-width: '1360px') {
+    padding: 0;
+  }
+}
+
+.carouselWrapperDots {
+  padding: 0;
+}
+
+.carouselWrapper1Product {
+  max-width: calc(
+    $maxProductWidth + (var(--fs-spacing-4) * 2) + ($carouselPadding * 2)
+  );
+}
+
+.carouselWrapper2Products {
+  max-width: calc(
+    ($maxProductWidth * 2) + (var(--fs-spacing-4) * 4) + ($carouselPadding * 2)
+  );
+}
+
+.carouselWrapper3Products {
+  max-width: calc(
+    ($maxProductWidth * 3) + (var(--fs-spacing-4) * 6) + ($carouselPadding * 2)
+  );
+}
+
+.carouselWrapper4Products {
+  max-width: calc(
+    ($maxProductWidth * 4) + (var(--fs-spacing-4) * 8) + ($carouselPadding * 2)
+  );
+}
+
+.productWrapper {
+  max-width: $maxProductWidth;
+}

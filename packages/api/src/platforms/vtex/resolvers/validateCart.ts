@@ -110,19 +110,27 @@ const equals = (storeOrder: IStoreOrder, orderForm: OrderForm) => {
 }
 
 function hasChildItem(items: OrderFormItem[], itemId: string) {
-  return items?.some(item => item.parentItemIndex && items[item.parentItemIndex].id === itemId)
+  return items?.some(
+    (item) =>
+      item.parentItemIndex !== null &&
+      item.parentItemIndex !== undefined &&
+      items[item.parentItemIndex]?.id === itemId
+  )
 }
 
 function hasParentItem(items: OrderFormItem[], itemId: string) {
-  return items?.some(item => item.id === itemId && item.parentItemIndex !== null)
+  return items?.some(
+    (item) => item.id === itemId && item.parentItemIndex !== null
+  )
 }
 
 const joinItems = (form: OrderForm) => {
   const itemsById = form.items.reduce(
     (acc, item, idx) => {
-      const id = hasParentItem(form.items, item.id) || hasChildItem(form.items, item.id) ? 
-        `${getId(orderFormItemToOffer(item))}::${idx}` : 
-        getId(orderFormItemToOffer(item))
+      const id =
+        hasParentItem(form.items, item.id) || hasChildItem(form.items, item.id)
+          ? `${getId(orderFormItemToOffer(item))}::${idx}`
+          : getId(orderFormItemToOffer(item))
 
       if (!acc[id]) {
         acc[id] = []
@@ -388,7 +396,10 @@ export const validateCart = async (
       // Update existing items
       const [head, ...tail] = maybeOriginItem
 
-      if(hasParentItem(orderForm.items, head.itemOffered.sku) || hasChildItem(orderForm.items, head.itemOffered.sku)) {
+      if (
+        hasParentItem(orderForm.items, head.itemOffered.sku) ||
+        hasChildItem(orderForm.items, head.itemOffered.sku)
+      ) {
         acc.itemsToUpdate.push(head)
 
         return acc
@@ -397,6 +408,7 @@ export const validateCart = async (
       const totalQuantity = items.reduce((acc, curr) => acc + curr.quantity, 0)
 
       // set total quantity to first item
+
       acc.itemsToUpdate.push({
         ...head,
         quantity: totalQuantity,
@@ -424,6 +436,7 @@ export const validateCart = async (
   if (changes.length === 0) {
     return null
   }
+
   // Step4: Apply delta changes to order form
   const updatedOrderForm = await commerce.checkout
     // update orderForm items
@@ -433,9 +446,13 @@ export const validateCart = async (
       shouldSplitItem,
     })
     // update orderForm shippingData
-    .then((form: OrderForm) => updateOrderFormShippingData(form, session, ctx))
+    .then((form: OrderForm) => {
+      return updateOrderFormShippingData(form, session, ctx)
+    })
     // update orderForm etag so we know last time we touched this orderForm
-    .then((form: OrderForm) => setOrderFormEtag(form, commerce))
+    .then((form: OrderForm) => {
+      return setOrderFormEtag(form, commerce)
+    })
     .then(joinItems)
 
   const equalMessages = deepEquals(

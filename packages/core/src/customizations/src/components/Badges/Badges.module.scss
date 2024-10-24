@@ -1,0 +1,111 @@
+.badgeWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--fs-spacing-0);
+  border-radius: var(--fs-radius-rounded);
+  color: var(--jwp-color-white);
+  font-size: var(--fs-text-size-00);
+  font-weight: var(--fs-text-weight-semibold);
+  min-height: 22px;
+  line-height: 1.15;
+  padding: 0 var(--fs-spacing-2);
+  box-sizing: content-box;
+  cursor: default;
+}
+
+.new {
+  background-color: var(--jwp-color-light-azure);
+  font-family: var(--fs-text-face-title);
+}
+
+.sale {
+  background-color: var(--jwp-color-badge-red);
+  font-family: var(--fs-text-face-title);
+}
+
+.warning {
+  background-color: var(--jwp-color-tan);
+  color: var(--jwp-color-brown);
+  border: 1px solid var(--jwp-color-brown);
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+.notAvailable {
+  background-color: var(--jwp-color-badge-red-light);
+  color: var(--jwp-color-badge-red);
+  border: 1px solid var(--jwp-color-badge-red);
+}
+
+.warning,
+.notAvailable {
+  padding: 0 var(--fs-spacing-1) 0 var(--fs-spacing-0);
+
+  .text {
+    padding: var(--fs-spacing-0) 0;
+  }
+}
+
+.badgeTooltip {
+  position: absolute;
+  bottom: calc(100% + 1.25rem);
+  left: 0;
+  width: 17rem;
+  background-color: var(--jwp-color-white);
+  border: 1px solid var(--jwp-color-grey);
+  border-radius: var(--fs-radius-2);
+  box-shadow: 0 0.625rem 0.625rem 0 rgba(0, 0, 0, 0.1);
+  font-size: var(--fs-text-size-0);
+  opacity: 0;
+  padding: 0.875rem var(--fs-spacing-3-1\2);
+  visibility: hidden;
+  transition:
+    opacity var(--fs-standard-transition),
+    visibility var(--fs-standard-transition);
+
+  // create the small triangle
+  // pointing down from the tooltip to the badge
+  &::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: var(--fs-spacing-3-1\2);
+    border: 0.625rem solid transparent;
+    border-top-color: var(--jwp-color-grey);
+  }
+
+  // create a small inner triangle
+  // to cover the border of the ::before triangle
+  &::after {
+    content: '';
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 1.375rem;
+    border: 0.5rem solid transparent;
+    border-top-color: var(--jwp-color-white);
+  }
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  p {
+    font-size: inherit;
+  }
+}
+
+.badgeTooltipNotAvailable {
+  border-left: var(--fs-spacing-0) solid var(--jwp-color-badge-red);
+}
+
+.badgeTooltipWarning {
+  border-left: var(--fs-spacing-0) solid var(--jwp-color-yellow);
+}

@@ -1,0 +1,101 @@
+.modalOpenButton {
+  [data-fs-button-wrapper='true'] {
+    border-radius: 42px;
+  }
+}
+.modalContentWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--jwp-color-white);
+  border-radius: var(--fs-radius-4);
+  box-shadow: 0 2rem 2rem 0 rgba(0, 0, 0, 0.075);
+  width: 100%;
+  max-width: 800px;
+  @include media('<=tablet') {
+    top: 0;
+    transform: none;
+    left: 0;
+    height: 100%;
+    border-radius: 0;
+  }
+  [data-fs-modal-body] > * + * {
+    margin-top: var(--fs-spacing-2);
+  }
+  .modalContentTitle {
+    font-size: var(--fs-text-size-9);
+    color: var(--jwp-color-black);
+    margin: var(--fs-spacing-4) 0;
+    font-family: var(--fs-text-face-body);
+    font-weight: var(--fs-text-weight-bold);
+  }
+  [data-fs-orgs-counter] {
+    text-align: start;
+  }
+
+  [data-fs-modal-body] {
+    padding: var(--fs-spacing-7);
+    @include media('<=tablet') {
+      padding: var(--fs-spacing-7) var(--fs-spacing-5) var(--fs-spacing-7)
+        var(--fs-spacing-5);
+    }
+  }
+
+  [data-fs-modal-header-title] {
+    font-family: var(--fs-text-face-title);
+    font-size: var(--fs-text-size-4);
+    font-weight: var(--fs-text-weight-medium);
+  }
+
+  [data-fs-overlay] {
+    overflow-y: scroll;
+    max-height: 100vh;
+    padding-bottom: var(--fs-spacing-9);
+  }
+
+  [data-fs-join-button] {
+    width: 100%;
+  }
+
+  @include media('<=tablet') {
+    [data-fs-modal] {
+      width: calc(100vw / 3);
+      min-width: calc(1500px / 3);
+    }
+  }
+}
+
+.modalHeaderWrapper {
+  [data-fs-modal-header] {
+    position: relative;
+    border-radius: var(--fs-radius-2) var(--fs-radius-2) 0 0;
+  }
+
+  [data-fs-modal-header-title] {
+    color: var(--jwp-color-white);
+  }
+
+  [data-fs-button] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+  }
+
+  [data-fs-button-wrapper] svg {
+    color: var(--jwp-color-black);
+    width: 18px;
+    height: 18px;
+  }
+
+  [data-fs-button][data-fs-button-variant='tertiary']:hover
+    [data-fs-button-wrapper],
+  [data-fs-button][data-fs-button-variant='tertiary']:focus
+    [data-fs-button-wrapper],
+  [data-fs-button][data-fs-button-variant='tertiary']:focus-visible
+    [data-fs-button-wrapper] {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}

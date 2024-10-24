@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fs-spacing-4);
+  padding: 0 var(--fs-spacing-4);
+
+  @include media('>notebook') {
+    flex-direction: row;
+
+    > div {
+      flex: 0 1 376px;
+    }
+  }
+}
+
+.heading {
+  display: block;
+  font-family: var(--fs-text-face-title);
+  font-size: var(--fs-text-size-2);
+  font-weight: var(--fs-text-weight-semibold);
+  text-transform: uppercase;
+  margin-bottom: var(--fs-spacing-2);
+}
+
+.list {
+  font-size: var(--fs-text-size-0);
+  display: flex;
+  flex-direction: column;
+  gap: var(--fs-spacing-1);
+  padding-left: var(--fs-spacing-3);
+  margin-bottom: 0;
+}

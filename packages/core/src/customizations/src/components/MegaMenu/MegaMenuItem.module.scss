@@ -1,0 +1,19 @@
+.textWrapper {
+  display: flex;
+  gap: var(--fs-spacing-0);
+  align-items: center;
+}
+
+.button {
+  @include input-focus-ring;
+}
+
+.buttonLabel {
+  @include visually-hidden;
+}
+
+.icon {
+  width: 17px;
+  height: 17px;
+  object-fit: contain;
+}

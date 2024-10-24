@@ -1,0 +1,83 @@
+.modalContentWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--jwp-color-white);
+  border-radius: var(--fs-radius-4);
+  box-shadow: 0 2.375rem 2rem 0 rgba(0, 0, 0, 0.075);
+  max-height: 100vh;
+  width: auto;
+  max-width: 370px;
+
+  [data-fs-modal-header-title] {
+    font-family: var(--fs-text-face-title);
+    font-size: var(--fs-text-size-4);
+    font-weight: var(--fs-text-weight-medium);
+  }
+
+  [data-fs-overlay] {
+    overflow-y: scroll;
+    max-height: 100vh;
+    padding-bottom: var(--fs-spacing-9);
+    z-index: 10;
+  }
+
+  [data-fs-modal-body] {
+    display: flex;
+    justify-content: center;
+  }
+
+  @include media('<=tablet') {
+    width: calc(100vw - 2rem);
+  }
+}
+
+.modalHeaderWrapper {
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    background-color: var(--jwp-color-dark-grey);
+    height: var(--fs-spacing-11);
+    margin-bottom: var(--fs-spacing-3);
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+
+  [data-fs-modal-header-title] {
+    color: var(--jwp-color-white);
+  }
+
+  [data-fs-button] {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  [data-fs-button-wrapper] svg {
+    color: var(--jwp-color-white);
+  }
+
+  [data-fs-button][data-fs-button-variant='tertiary']:hover
+    [data-fs-button-wrapper],
+  [data-fs-button][data-fs-button-variant='tertiary']:focus
+    [data-fs-button-wrapper],
+  [data-fs-button][data-fs-button-variant='tertiary']:focus-visible
+    [data-fs-button-wrapper] {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+.button {
+  padding: 0;
+  cursor: pointer;
+  color: var(--jwp-color-blue);
+  font-weight: var(--fs-text-weight-semibold);
+
+  @include hover-active-focus {
+    text-decoration: underline;
+  }
+}

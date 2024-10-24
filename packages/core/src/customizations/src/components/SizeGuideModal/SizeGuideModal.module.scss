@@ -1,0 +1,150 @@
+.modalContentWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--jwp-color-white);
+  border-radius: var(--fs-radius-4);
+  box-shadow: 0 2.375rem 2rem 0 rgba(0, 0, 0, 0.075);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 376px;
+  max-height: 100vh;
+  overflow-y: auto;
+
+  .modalTableBody {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 86vh;
+  }
+
+  @include media('<=phonelg') {
+    max-height: calc(100vh - var(--fs-spacing-14));
+
+    .modalTableBody {
+      max-height: 100dvh;
+    }
+
+    .modalTableBody tr:last-child {
+      padding-bottom: var(--fs-spacing-4);
+    }
+  }
+
+  [data-fs-modal-header-title] {
+    font-family: var(--fs-text-face-title);
+    font-size: var(--fs-text-size-4);
+    font-weight: var(--fs-text-weight-medium);
+  }
+
+  [data-fs-overlay] {
+    overflow-y: scroll;
+    max-height: 100vh;
+    padding-bottom: var(--fs-spacing-9);
+  }
+
+  @include media('<=tablet') {
+    [data-fs-modal] {
+      width: calc(100vw / 3);
+      min-width: calc(1500px / 3);
+    }
+  }
+
+  header {
+    height: 24px;
+    background-color: var(--jwp-color-dark-grey);
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: -1px;
+  }
+
+  button {
+    width: 40px;
+  }
+
+  button svg {
+    color: var(--jwp-color-white);
+    width: 18px;
+  }
+
+  [data-fs-button][data-fs-icon-button='true'] [data-fs-button-wrapper] {
+    height: 30px;
+    border-top-right-radius: 8px;
+  }
+
+  [data-fs-button-wrapper] {
+    background-color: var(--jwp-color-dark-grey);
+    color: var(--jwp-color-white);
+    &:hover,
+    &:focus,
+    &:focus-visible,
+    &:active {
+      background-color: var(--jwp-color-dark-grey);
+      color: var(--jwp-color-white);
+    }
+  }
+
+  table,
+  th,
+  td,
+  tr {
+    border: none;
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-align: center;
+  }
+
+  table {
+    background-color: (--jwp-color-dark-grey);
+  }
+
+  .modalTableHead,
+  .modalTableBody {
+    display: block;
+    width: 100%;
+  }
+
+  th {
+    color: var(--jwp-color-white);
+    background-color: var(--jwp-color-dark-grey);
+    padding-bottom: var(--fs-spacing-4);
+    border: 2px solid var(--jwp-color-dark-grey);
+    font-family: var(--fs-text-face-title);
+    font-weight: 450;
+    font-size: var(--fs-text-size-4);
+    @include media('<=tablet') {
+      width: 125px;
+    }
+    @include media('>tablet') {
+      width: 164px;
+    }
+  }
+
+  td {
+    line-height: var(--fs-text-size-10);
+    font-family: var(--fs-text-face-body);
+    font-size: var(--fs-text-size-3);
+    width: 164px;
+  }
+
+  td:nth-child(2) {
+    border-left: 1px solid var(--jwp-color-table-grey);
+    border-right: 1px solid var(--jwp-color-table-grey);
+  }
+
+  tr:nth-child(even) {
+    background: var(--jwp-color-white);
+  }
+  tr:nth-child(odd) {
+    background: var(--jwp-color-light-grey);
+  }
+
+  tr:last-child td,
+  tr:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+}

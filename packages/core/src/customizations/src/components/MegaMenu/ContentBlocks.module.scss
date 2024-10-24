@@ -1,0 +1,33 @@
+.imageBlocks {
+  display: flex;
+  flex-direction: column;
+
+  @include media('>desktop') {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.imageBlock {
+  width: 100%;
+  background: var(--jwp-color-light-grey);
+  margin-bottom: var(--fs-spacing-4);
+
+  @include media('>desktop') {
+    width: 265px;
+
+    + .imageBlock {
+      margin-left: var(--fs-spacing-5);
+    }
+  }
+}
+
+.iconBlocks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: var(--fs-spacing-10);
+
+  @include media('>desktop') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

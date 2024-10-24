@@ -1,0 +1,55 @@
+.section {
+  box-sizing: border-box;
+  margin-top: 32px;
+  width: calc(100% - var(--fs-grid-padding) - var(--fs-grid-padding));
+  max-width: var(--fs-grid-max-width);
+  margin-right: auto;
+  margin-left: auto;
+}
+.container {
+  @include media('<=notebook') {
+    box-sizing: border-box;
+    padding: 0 var(--fs-grid-padding);
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--fs-spacing-1);
+  background-color: var(--jwp-color-white);
+  padding: var(--fs-spacing-3) var(--fs-grid-padding);
+
+  @include media('>phonelg') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include media('>=tablet') {
+    column-gap: var(--fs-spacing-5);
+    row-gap: var(--fs-spacing-6);
+  }
+
+  @include media('>notebook') {
+    grid-template-columns: repeat(3, 1fr);
+    background-color: transparent;
+    padding: 0;
+  }
+
+  @include media('>notebookwide') {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include media('>desktop') {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: var(--fs-spacing-6);
+
+  @include media('>notebook') {
+    row-gap: var(--fs-spacing-9);
+  }
+}

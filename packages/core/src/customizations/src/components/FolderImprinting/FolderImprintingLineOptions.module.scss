@@ -1,0 +1,112 @@
+.container {
+  display: flex;
+
+  @include media('<=notebook') {
+    &.containerEnabled {
+      flex-direction: column;
+      gap: var(--fs-spacing-2);
+    }
+  }
+}
+
+.heading {
+  font-weight: var(--fs-text-weight-bold);
+  font-family: var(--fs-text-face-body);
+  font-size: var(--fs-text-size-0);
+  margin-bottom: var(--fs-spacing-2);
+}
+
+.options {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--fs-spacing-2);
+
+  .containerEnabled & {
+    flex: 1 1 100%;
+  }
+}
+
+.option {
+  width: 100%;
+
+  input,
+  select {
+    width: 100%;
+  }
+
+  @include media('>notebook') {
+    width: 357px;
+  }
+}
+
+.label {
+  display: inline-block;
+
+  &.labelBold {
+    font-weight: var(--fs-text-weight-bold);
+  }
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+
+  select {
+    margin-top: 0;
+  }
+
+  input[type='number'] {
+    width: 70px;
+    padding-right: var(--fs-spacing-0);
+    text-align: center;
+  }
+}
+
+.enableButton {
+  display: flex;
+  align-items: center;
+  gap: var(--fs-spacing-2);
+  padding-left: var(--fs-spacing-2);
+  padding-right: var(--fs-spacing-2);
+}
+
+.disableButton {
+  cursor: pointer;
+}
+
+.prices {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--fs-spacing-4);
+
+  .containerEnabled & {
+    margin-top: 0;
+  }
+
+  @include media('>notebook') {
+    margin-top: var(--fs-spacing-4);
+  }
+}
+
+.price {
+  flex: 0 0 65px;
+  text-align: center;
+
+  &:last-of-type {
+    text-align: right;
+  }
+
+  @include media('>notebook') {
+    flex: 0 0 85px;
+  }
+}
+
+.priceValue {
+  font-size: var(--fs-text-size-2);
+}
+
+.tableNote {
+  font-size: var(--fs-text-size-4);
+}

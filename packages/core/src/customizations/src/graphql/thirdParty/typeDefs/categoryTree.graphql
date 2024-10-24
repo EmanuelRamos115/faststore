@@ -1,0 +1,13 @@
+type CategoryTree {
+  id: Int!
+  name: String!
+  hasChildren: Boolean!
+  url: String!
+  children: [CategoryTree!]!
+  Title: String!
+  MetaTagDescription: String!
+}
+
+type Query {
+  categoryTree(id: Int!, excludeIds: [Int!]): [CategoryTree]
+}

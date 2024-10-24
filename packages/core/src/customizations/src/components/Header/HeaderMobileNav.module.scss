@@ -1,0 +1,19 @@
+$main-row-height-mobile: 54px;
+
+.mobileNavButton[data-fs-button][data-fs-icon-button='true'] {
+  height: $main-row-height-mobile;
+  width: $main-row-height-mobile;
+  border-right: 1px solid #817d82;
+  background-color: var(--jwp-color-dark-grey);
+
+  &[data-fs-button][data-fs-button-variant='tertiary']:hover
+    [data-fs-button-wrapper],
+  &[data-fs-button][data-fs-button-variant='tertiary']:focus
+    [data-fs-button-wrapper] {
+    background-color: var(--jwp-color-dark-grey);
+  }
+
+  [data-fs-icon] {
+    color: var(--jwp-color-white);
+  }
+}

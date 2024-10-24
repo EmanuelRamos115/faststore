@@ -1,0 +1,53 @@
+.levelTwoLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--jwp-color-black);
+  text-transform: uppercase;
+  padding: 0 var(--fs-spacing-2) 0 var(--fs-spacing-5);
+  font-family: var(--fs-text-face-title);
+  font-size: var(--fs-text-size-2);
+  font-weight: var(--fs-text-weight-medium);
+
+  > a,
+  > span {
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    padding: 15px 0 15px;
+    color: var(--jwp-color-black);
+  }
+
+  > span {
+    cursor: default;
+  }
+
+  &.active {
+    background-color: var(--jwp-color-light-grey);
+    > a,
+    > span,
+    svg {
+      color: var(--jwp-color-maroon);
+    }
+
+    img {
+      // Generated using: https://codepen.io/sosuke/pen/Pjoqqp
+      filter: brightness(0) saturate(100%) invert(12%) sepia(37%)
+        saturate(3974%) hue-rotate(321deg) brightness(92%) contrast(107%);
+    }
+  }
+
+  @include hover {
+    background-color: var(--jwp-color-light-grey);
+    > a,
+    > span,
+    svg {
+      color: var(--jwp-color-maroon);
+    }
+
+    img {
+      filter: brightness(0) saturate(100%) invert(12%) sepia(37%)
+        saturate(3974%) hue-rotate(321deg) brightness(92%) contrast(107%);
+    }
+  }
+}

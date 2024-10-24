@@ -1,0 +1,34 @@
+.container {
+  margin-top: var(--fs-spacing-4); // temp
+  background-color: var(--jwp-color-light-grey);
+  padding: var(--fs-spacing-5) var(--fs-spacing-2) var(--fs-spacing-4);
+  font-size: var(--fs-text-size-0);
+  display: flex;
+  flex-direction: column;
+  gap: var(--fs-spacing-5);
+  border-radius: 0.5rem;
+
+  p {
+    font-size: var(--fs-text-size-0);
+  }
+}
+
+.formContainer {
+  border: 1px dotted var(--jwp-color-black);
+  border-radius: 1rem;
+  padding: var(--fs-spacing-4);
+}
+
+.lineOptionsContainer {
+  margin-top: var(--fs-spacing-2);
+}
+
+.line-options {
+  position: relative;
+}
+
+.lineOption {
+  padding: var(--fs-spacing-3) 0;
+  border-bottom: 1px solid var(--jwp-color-table-grey);
+  min-height: 110px;
+}

@@ -1,0 +1,48 @@
+$buttonWidth: 30px;
+$buttonHeight: 30px;
+
+@mixin slider-button-position($side) {
+  #{$side}: calc(($buttonWidth + 4px) * -1);
+
+  svg {
+    margin-#{$side}: -2px;
+  }
+}
+
+.sliderButton {
+  height: $buttonHeight;
+  width: $buttonWidth;
+  border: 1.5px solid var(--jwp-color-black);
+  border-radius: var(--fs-radius-circle);
+  transition:
+    background-color var(--fs-standard-transition),
+    color var(--fs-standard-transition);
+  z-index: 1;
+
+  // needed to prevent default color of transparent on mobile from react-slick
+  color: var(--jwp-color-black) !important;
+
+  // hide default arrow
+  &::before {
+    display: none;
+  }
+
+  svg {
+    width: 8px;
+    height: 16px;
+  }
+
+  @include hover-active-focus {
+    // !important needed to override react-slick's hover color
+    background-color: var(--jwp-color-white) !important;
+    color: var(--jwp-color-black) !important;
+  }
+}
+
+.sliderButtonPrev {
+  @include slider-button-position(left);
+}
+
+.sliderButtonNext {
+  @include slider-button-position(right);
+}

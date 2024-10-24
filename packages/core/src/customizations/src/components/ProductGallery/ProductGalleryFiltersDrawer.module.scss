@@ -1,0 +1,24 @@
+$footerHeight: 5rem;
+
+.content {
+  height: 100%;
+  padding-bottom: $footerHeight;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  height: $footerHeight;
+  border-top: 1px solid var(--jwp-color-border);
+  background-color: var(--jwp-color-light-grey);
+  padding: 1.25rem;
+}
+
+.viewButton {
+  width: 100%;
+}

@@ -1,0 +1,45 @@
+.filter {
+  border-bottom: 1px solid var(--jwp-color-border);
+}
+
+.heading,
+.accordionHeading [data-fs-button-wrapper] {
+  padding: 20px 0;
+  text-align: left;
+  font-size: 1.125rem;
+  font-family: var(--fs-text-face-title);
+  font-weight: var(--fs-text-weight-medium);
+
+  .drawerFilter & {
+    font-size: 0.9375rem;
+    padding: 20px var(--fs-spacing-3);
+  }
+}
+
+.accordionHeading {
+  display: block;
+  width: 100%;
+  --fs-button-tertiary-bkg-color-hover: transparent;
+
+  [data-fs-button-wrapper] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  [data-fs-button-icon] {
+    svg {
+      display: block;
+    }
+  }
+}
+
+.inputContainer {
+  padding-bottom: var(--fs-spacing-4);
+
+  .drawerFilter & {
+    font-size: 0.9375rem;
+    padding: 0 var(--fs-spacing-3) var(--fs-spacing-4);
+  }
+}

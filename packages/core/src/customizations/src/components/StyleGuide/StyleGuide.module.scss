@@ -1,0 +1,42 @@
+.contentWrapper {
+  @include layout-content;
+  margin-top: var(--fs-spacing-6);
+}
+
+.card {
+  padding: var(--fs-spacing-2);
+  box-shadow: 0 8px 21px #0000001a;
+  margin-bottom: var(--fs-spacing-2);
+}
+
+.cardFlex {
+  display: inline-flex;
+  gap: var(--fs-spacing-4);
+  align-items: center;
+}
+
+.cardFlexVertical {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--fs-spacing-4);
+}
+
+.cardDark {
+  background-color: var(--jwp-color-black);
+}
+
+.code {
+  font-family: monospace;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+// using these imports as outlined here:
+// https://www.faststore.dev/components/molecules/breadcrumb#import-styles-into-your-faststore-project
+.customBreadcrumbWrapper {
+  @import '@faststore/ui/src/components/atoms/Button/styles.scss';
+  @import '@faststore/ui/src/components/molecules/Dropdown/styles.scss';
+  @import '@faststore/ui/src/components/molecules/Breadcrumb/styles.scss';
+}

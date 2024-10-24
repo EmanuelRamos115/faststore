@@ -1,0 +1,44 @@
+.tableHeadingsRow {
+  display: flex;
+  gap: var(--fs-spacing-6);
+  background-color: var(--jwp-color-light-grey);
+  border-radius: var(--fs-radius-4) var(--fs-radius-4) 0 0;
+  border: 1px solid var(--jwp-color-grey);
+  border-bottom: 0;
+  padding: var(--fs-spacing-4) var(--fs-spacing-7);
+
+  @include media('<=desktop') {
+    padding: var(--fs-text-size-4) var(--fs-spacing-5);
+  }
+
+  @include media('<=notebook') {
+    display: none;
+  }
+}
+
+.tableHeading {
+  @include sku-table-widths;
+
+  font-family: var(--fs-text-face-title);
+  font-size: calc(var(--fs-text-size-base) * 1.125);
+  font-weight: var(--fs-text-weight-medium);
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+.dataWrapper {
+  @include media('<=notebook') {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+.addToCartWrapper {
+  margin-top: 2rem;
+  text-align: right;
+
+  @include media('<=notebook') {
+    display: none;
+  }
+}

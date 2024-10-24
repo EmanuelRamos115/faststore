@@ -1,0 +1,90 @@
+.levelOne {
+  @include layout-content;
+  flex: 0;
+}
+
+.levelOneItems {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.levelOneItem {
+  @include media('>desktop') {
+    padding: 0 var(--fs-spacing-5);
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+  }
+}
+
+.levelOneLink {
+  display: flex;
+  align-items: center;
+
+  > a,
+  > span {
+    display: inline-flex;
+    padding: var(--fs-spacing-3) 0;
+    color: var(--jwp-color-white);
+    text-decoration: none;
+    text-transform: uppercase;
+    align-items: center;
+    gap: var(--fs-spacing-0);
+    font-family: var(--fs-text-face-title);
+    font-size: var(--fs-text-size-1);
+    font-weight: var(--fs-text-weight-medium);
+  }
+
+  > span {
+    cursor: default;
+  }
+
+  button {
+    color: var(--jwp-color-white);
+
+    svg {
+      display: block;
+    }
+  }
+
+  &.active {
+    a,
+    span,
+    button {
+      color: var(--jwp-color-gold);
+    }
+
+    svg {
+      transform: rotate(180deg);
+    }
+
+    img {
+      // Generated using: https://codepen.io/sosuke/pen/Pjoqqp
+      filter: brightness(0) saturate(100%) invert(81%) sepia(37%) saturate(454%)
+        hue-rotate(344deg) brightness(103%) contrast(102%);
+    }
+  }
+
+  @include hover {
+    > a,
+    > span {
+      color: var(--jwp-color-gold);
+    }
+
+    svg {
+      fill: var(--jwp-color-gold);
+      transform: rotate(180deg);
+    }
+
+    img {
+      filter: brightness(0) saturate(100%) invert(81%) sepia(37%) saturate(454%)
+        hue-rotate(344deg) brightness(103%) contrast(102%);
+    }
+  }
+}

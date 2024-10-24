@@ -1,0 +1,19 @@
+type Collection {
+  id: Int!
+  name: String!
+  slug: String!
+  totalProducts: Int!
+}
+
+extend type StoreProductGroup {
+  """
+  Array of variant SKUs for the product, including related products (AKA sneaky
+  cross sells)
+  """
+  fullVariantList: [StoreProduct!]!
+
+  """
+  List of collections that the product is a part of
+  """
+  festivalCollections: [Collection!]!
+}

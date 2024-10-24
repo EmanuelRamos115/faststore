@@ -1,0 +1,15 @@
+type CollectionDetails {
+  Id: Int!
+  Name: String!
+  Description: String
+  Searchable: Boolean!
+  Highlight: Boolean!
+  DateFrom: Boolean!
+  DateTo: Boolean!
+  TotalProducts: Int!
+  Type: String!
+}
+
+type Query {
+  collectionDetails(id: Int!): CollectionDetails
+}

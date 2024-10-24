@@ -1,0 +1,49 @@
+.wishlistButtonContainer {
+  [data-fs-add-wishlist-icon] [data-fs-button-wrapper] {
+    color: var(--jwp-color-medium-grey);
+  }
+
+  [data-fs-add-wishlist-icon-selected='true'] [data-fs-button-wrapper] {
+    color: var(--jwp-color-forest-green);
+  }
+}
+
+.textButton {
+  color: var(--jwp-color-blue);
+  font-size: var(--fs-text-size-0);
+  font-weight: var(--fs-text-weight-semibold);
+  text-decoration: underline;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+
+  @include media('>tablet') {
+    font-size: var(--fs-text-size-2);
+  }
+}
+
+.cartAddListButton {
+  border-radius: var(--fs-radius-rounded);
+  cursor: pointer;
+  font-family: var(--fs-text-face-title);
+  font-size: var(--fs-text-size-2);
+  font-weight: var(--fs-text-weight-medium);
+  line-height: 1.15;
+  text-decoration: none;
+  transition:
+    background-color var(--fs-standard-transition),
+    border-color var(--fs-standard-transition),
+    color var(--fs-standard-transition);
+  border: 1px solid var(--jwp-color-black);
+  display: flex;
+  align-items: center;
+  gap: var(--fs-spacing-1);
+  text-align: left;
+  padding: 0.625rem 1rem;
+  color: var(--jwp-color-black);
+
+  &:hover {
+    background-color: var(--jwp-color-black);
+    color: var(--jwp-color-white);
+  }
+}

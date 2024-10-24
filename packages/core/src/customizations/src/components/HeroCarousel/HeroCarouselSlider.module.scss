@@ -1,0 +1,32 @@
+// NOTE: we need to use !important a lot to override default react-slick styles
+
+.heroCarouselSlider {
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.dotWrapper {
+  display: flex;
+  column-gap: 0.5rem;
+  justify-content: center;
+  transform: translateY(0.5rem);
+
+  li {
+    margin: 0 !important;
+    height: 0.625rem !important;
+    width: 0.625rem !important;
+  }
+}
+
+.dotButton {
+  &::before {
+    content: '' !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+    background: var(--jwp-color-maroon) !important;
+    border-radius: var(--fs-radius-circle);
+    height: 0.625rem !important;
+    width: 0.625rem !important;
+  }
+}

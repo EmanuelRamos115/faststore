@@ -1,0 +1,22 @@
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--fs-spacing-2);
+}
+
+.buttonRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.buttonCard {
+  border-radius: var(--fs-border-radius);
+  box-shadow: 0 8px 21px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+
+  p {
+    margin: 0.5rem 0 0 0;
+  }
+}

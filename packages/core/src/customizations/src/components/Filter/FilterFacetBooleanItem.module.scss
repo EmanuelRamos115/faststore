@@ -1,0 +1,13 @@
+.option {
+  display: flex;
+  gap: var(--fs-spacing-1);
+}
+
+.checkbox {
+  flex: 0 0 20px;
+}
+
+.label {
+  cursor: pointer;
+  font-size: 0.93rem;
+}

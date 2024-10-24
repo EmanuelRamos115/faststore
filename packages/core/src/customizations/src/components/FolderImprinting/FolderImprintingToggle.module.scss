@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  gap: var(--fs-spacing-1);
+  align-items: flex-start;
+}
+
+.checkbox {
+  border: 1px solid var(--jwp-color-dark-grey);
+}
+
+.label {
+  display: inline-block;
+  margin-top: 0.1875rem;
+  font-family: var(--fs-text-face-title);
+  font-size: var(--fs-text-size-2);
+  font-weight: var(--fs-text-weight-semibold);
+  text-transform: uppercase;
+  margin-bottom: var(--fs-spacing-2);
+}

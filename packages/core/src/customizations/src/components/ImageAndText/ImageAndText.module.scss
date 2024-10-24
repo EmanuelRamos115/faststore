@@ -1,0 +1,126 @@
+.row {
+  display: flex;
+
+  @include media('<=tablet') {
+    flex-direction: column;
+  }
+
+  @include media('>tablet') {
+    &.imageRight {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.box {
+  flex: 1 0 50%;
+}
+
+.boxContent {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include media('>tablet') {
+    .contained.imageRight & {
+      padding-right: var(--fs-spacing-8);
+    }
+
+    .contained.imageLeft & {
+      padding-left: var(--fs-spacing-8);
+    }
+  }
+
+  @include media('<=tablet') {
+    .mobileBackgroundBottom & {
+      padding-bottom: 47.5vw;
+    }
+  }
+}
+
+.backgroundImage {
+  position: absolute;
+  width: 50%;
+  height: auto;
+  display: block;
+  object-fit: none;
+
+  @include media('<=tablet') {
+    width: 100%;
+  }
+}
+
+// desktop position classes
+.backgroundImageDesktopPositionXLeft {
+  left: 0;
+}
+
+.backgroundImageDesktopPositionXCenter {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.backgroundImageDesktopPositionXRight {
+  right: 0;
+}
+
+.backgroundImageDesktopPositionYTop {
+  top: 0;
+}
+
+.backgroundImageDesktopPositionYCenter {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.backgroundImageDesktopPositionYBottom {
+  bottom: 0;
+}
+
+.backgroundImageDesktopPositionXCenter.backgroundImageDesktopPositionYCenter {
+  transform: translateX(-50%) translateY(-50%);
+}
+
+// mobile position classes
+.backgroundImageMobilePositionXLeft {
+  @include media('<=tablet') {
+    left: 0;
+  }
+}
+
+.backgroundImageMobilePositionXCenter {
+  @include media('<=tablet') {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.backgroundImageMobilePositionXRight {
+  @include media('<=tablet') {
+    right: 0;
+  }
+}
+
+.backgroundImageMobilePositionYTop {
+  @include media('<=tablet') {
+    top: 0;
+  }
+}
+
+.backgroundImageMobilePositionYCenter {
+  @include media('<=tablet') {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.backgroundImageMobilePositionYBottom {
+  @include media('<=tablet') {
+    bottom: 0;
+  }
+}
+
+.backgroundImageMobilePositionXCenter.backgroundImageMobilePositionYCenter {
+  transform: translateX(-50%) translateY(-50%);
+}

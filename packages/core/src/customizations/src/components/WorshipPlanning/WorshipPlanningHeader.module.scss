@@ -1,0 +1,29 @@
+.bannerImageWrapper {
+  @include fit-nextjs-image;
+
+  height: 18.5vw;
+  max-height: 320px;
+
+  @include media('<=notebook') {
+    height: 50.5vw;
+  }
+
+  @include media('<=tablet') {
+    height: 82.5vw;
+  }
+}
+
+.contentWrapper {
+  @include content-wrapper('narrow');
+
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--fs-spacing-3);
+  padding: var(--fs-spacing-9) 0;
+}
+
+.divider {
+  background-color: var(--jwp-color-medium-grey);
+  height: 1px;
+  width: 100%;
+}

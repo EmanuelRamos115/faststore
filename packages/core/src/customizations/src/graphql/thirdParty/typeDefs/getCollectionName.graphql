@@ -1,0 +1,7 @@
+type CollectionNameResponse {
+  Name: String
+}
+
+type Query {
+  getCollectionName(collectionId: String!): CollectionNameResponse
+}

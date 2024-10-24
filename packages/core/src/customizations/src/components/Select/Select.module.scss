@@ -1,0 +1,68 @@
+.dropdownButton {
+  @include input-focus-ring;
+  height: 54px;
+
+  [data-fs-button-wrapper] {
+    border: 1px solid var(--fs-color-neutral-2);
+    justify-content: space-between;
+    font-size: var(--fs-text-size-2);
+    font-weight: var(--fs-text-weight-medium);
+    font-family: var(--fs-text-face-body);
+    background-color: var(--jwp-color-white);
+    border-radius: 4px;
+  }
+
+  span:not([data-fs-button-icon]) {
+    white-space: nowrap;
+  }
+
+  [data-fs-button-icon] {
+    display: block;
+    height: 16px;
+
+    svg {
+      height: 16px;
+      width: 16px;
+    }
+  }
+}
+
+.dropdownButton:focus,
+.dropdownButton:active,
+.dropdownButton:hover {
+  [data-fs-button-wrapper] {
+    border: 1px solid var(--jwp-color-black);
+    border-radius: var(--fs-radius-1);
+  }
+}
+
+.dropdownMenu {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--jwp-color-white);
+  border: 1px solid var(--jwp-color-grey);
+  font-size: var(--fs-text-size-2);
+  padding: 6px 0;
+  font-weight: var(--fs-text-weight-medium);
+  z-index: 2;
+}
+
+.dropdownItem {
+  @include input-focus-ring;
+  text-align: left;
+  padding: 0.35rem 1rem;
+  font-size: var(--fs-text-size-2);
+
+  @include hover {
+    background-color: var(--jwp-color-light-grey);
+  }
+}
+
+.dropdownItemSelected {
+  color: var(--jwp-color-maroon);
+  background-color: var(--jwp-color-light-grey);
+}
+
+.placeholder {
+  white-space: nowrap;
+}

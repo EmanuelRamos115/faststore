@@ -1,0 +1,9 @@
+.section {
+  padding: var(--fs-spacing-7) 0 0;
+  display: flex;
+  justify-content: center;
+
+  @include media('>notebook') {
+    padding: var(--fs-spacing-10) 0 0;
+  }
+}

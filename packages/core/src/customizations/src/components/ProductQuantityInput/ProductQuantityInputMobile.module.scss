@@ -1,0 +1,65 @@
+.quantitySelectorWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 0.375rem;
+  font-family: var(--fs-text-face-title);
+}
+
+.quantitySelectorForm {
+  background-color: var(--jwp-color-green);
+  color: var(--jwp-color-white);
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 0.125rem;
+  border-radius: var(--fs-radius-rounded);
+}
+
+.quantityButton {
+  color: inherit;
+  display: flex;
+}
+
+.quantityInput {
+  background-color: var(--jwp-color-light-grey);
+  border: none;
+  border-radius: var(--fs-radius-2);
+  padding: 0.375rem 0;
+  text-align: center;
+  width: var(--fs-spacing-6);
+}
+
+.quantitySelectorNotification {
+  display: flex;
+  align-items: center;
+  gap: 0.125rem;
+  background-color: var(--jwp-color-light-grey);
+  border-radius: var(--fs-radius-rounded);
+  font-size: var(--fs-text-size-0);
+  padding: 0.125rem 0.375rem;
+}
+
+.quantitySelectorNotificationIconWrapper {
+  color: var(--jwp-color-green);
+}
+
+.mobileAddToCartBtn {
+  background-color: var(--jwp-color-green);
+  border-radius: var(--fs-radius-rounded);
+  color: var(--jwp-color-white);
+  font-family: var(--fs-text-face-title);
+  font-size: 0.625rem;
+  font-weight: var(--fs-text-weight-semibold);
+  letter-spacing: 1.5px;
+  padding: 0.625rem 1.375rem;
+  text-align: center;
+  text-transform: uppercase;
+
+  &:disabled {
+    opacity: 30%;
+
+    @include hover-active-focus {
+      cursor: not-allowed;
+    }
+  }
+}

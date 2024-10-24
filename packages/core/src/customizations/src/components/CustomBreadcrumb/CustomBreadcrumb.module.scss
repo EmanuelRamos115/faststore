@@ -1,0 +1,57 @@
+.customBreadcrumbWrapper {
+  @include layout-content;
+
+  [data-fs-breadcrumb] {
+    padding: var(--fs-spacing-3) 0;
+
+    @include media('>notebook') {
+      padding: var(--fs-spacing-4) 0;
+    }
+  }
+
+  [data-fs-breadcrumb-list] {
+    margin: 0;
+  }
+
+  [data-fs-breadcrumb-list-item] {
+    font-size: var(--fs-text-size-0);
+    color: var(--jwp-color-dark-grey);
+    padding: var(--fs-spacing-1) 0;
+
+    & > * {
+      color: inherit;
+    }
+
+    a {
+      text-decoration: none;
+
+      @include hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  [data-fs-breadcrumb-divider] {
+    border: 0;
+    height: auto;
+    margin: 0 var(--fs-spacing-0);
+
+    &:before {
+      content: '>';
+    }
+  }
+
+  [data-fs-button] {
+    --fs-button-height: 18px;
+    --fs-control-tap-size: 18px;
+    padding: 0;
+    margin: 0;
+
+    [data-fs-button-wrapper] {
+      padding-top: 0;
+      padding-bottom: 0;
+      margin: 0;
+      border: 0;
+    }
+  }
+}

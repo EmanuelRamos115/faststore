@@ -1,0 +1,20 @@
+.colorOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 70%;
+}
+
+.colorOverlayBlack {
+  background-color: var(--jwp-color-black);
+}
+
+.colorOverlayMaroon {
+  background-color: var(--jwp-color-maroon-dark);
+}
+
+.colorOverlayDarkGrey {
+  background-color: var(--jwp-color-dark-grey);
+}

@@ -1,0 +1,43 @@
+.row {
+  margin-bottom: var(--fs-spacing-5);
+
+  @include media('>notebook') {
+    margin-bottom: var(--fs-spacing-9);
+  }
+}
+
+.rowDark {
+  background: var(--jwp-color-light-grey);
+  padding: var(--fs-spacing-5) 0;
+
+  @include media('>tablet') {
+    padding: var(--fs-spacing-9) 0;
+  }
+}
+
+.container {
+  @include content-wrapper('wide');
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fs-spacing-3);
+
+  @include media('>tablet') {
+    flex-direction: row;
+    gap: var(--fs-spacing-8);
+  }
+}
+
+.summaryMedia {
+  @include media('>tablet') {
+    flex: 0 0 40%;
+  }
+}
+
+.summaryDetails {
+  @include media('>tablet') {
+    flex: 1%;
+  }
+}

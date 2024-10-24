@@ -1,0 +1,24 @@
+.addToCartWrapper {
+  display: flex;
+  gap: 1.25rem;
+  padding-top: 2rem;
+  align-items: flex-start;
+}
+
+.qtyWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: var(--fs-spacing-1);
+}
+
+.qtyMessaging {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: var(--fs-spacing-1);
+
+  p {
+    font-size: var(--fs-text-size-0);
+  }
+}

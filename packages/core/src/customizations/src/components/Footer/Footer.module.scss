@@ -1,0 +1,130 @@
+// Mobile
+@include media('<=tablet') {
+  .desktop {
+    display: none;
+  }
+
+  .footerContainer {
+    flex-direction: column;
+  }
+
+  .headerButton {
+    padding: var(--fs-spacing-6) 0 var(--fs-spacing-4) 0;
+  }
+
+  // FooterLinks
+  .menuLinks {
+    padding: var(--fs-spacing-2) 2rem var(--fs-spacing-4) 2rem;
+  }
+
+  .menuLinks button {
+    width: 100%;
+    padding: var(--fs-spacing-1) 0;
+    color: var(--jwp-color-white);
+  }
+
+  .menuLinks button div {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .menuLinks li {
+    padding: var(--fs-spacing-2);
+    font-size: var(--fs-text-size-2);
+  }
+
+  .menuLinks a {
+    color: var(--jwp-color-white);
+  }
+
+  .logo {
+    width: 180px;
+  }
+}
+
+// Desktop
+@include media('>tablet') {
+  .mobile {
+    display: none;
+  }
+
+  .infoCard {
+    width: 35vw;
+  }
+
+  .headerButton {
+    padding: var(--fs-spacing-6) 0;
+  }
+
+  .menuLinks {
+    width: 65vw;
+    margin-right: 2rem;
+    padding: var(--fs-spacing-2) 4rem;
+  }
+
+  .logo {
+    width: 244px;
+  }
+}
+
+.footer {
+  color: var(--jwp-color-white);
+}
+
+.footerContainer {
+  display: flex;
+}
+
+.infoCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoFooterContainer {
+  display: flex;
+  gap: 0.5rem;
+
+  @include media('>notebook') {
+    align-items: center;
+  }
+
+  @include media('<=notebook') {
+    flex-direction: column;
+    align-items: baseline;
+  }
+
+  @include media('<=tablet') {
+    display: none;
+  }
+}
+
+.logoFooterImage {
+  @include media('<=tablet') {
+    width: 180px;
+  }
+
+  @include media('>tablet') {
+    width: 244px;
+  }
+}
+
+.logoFooterDivider {
+  transform: rotate(0) translateY(10px);
+
+  @include media('<=notebook') {
+    transform: rotate(90deg) translateY(0);
+  }
+}
+
+.logoFooterTagline {
+  font-family: var(--fs-text-face-title);
+  font-size: var(--fs-text-size-base);
+  font-weight: var(--fs-text-weight-medium);
+  text-transform: uppercase;
+  transform: translateY(12px);
+
+  @include media('<=notebook') {
+    transform: translateY(0);
+  }
+}

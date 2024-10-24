@@ -1,0 +1,36 @@
+.quantitySelector {
+  input {
+    border: none;
+    font-size: var(--fs-text-size-0);
+    width: 50px;
+    height: 36px;
+    background-color: var(--jwp-color-light-grey);
+
+    &:hover,
+    &:focus-visible {
+      box-shadow: 0 0 0 1px var(--jwp-color-yellow);
+    }
+  }
+
+  [data-fs-button] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  [data-fs-button-wrapper] svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  [data-fs-button-wrapper] span {
+    height: 18px;
+  }
+
+  [data-fs-button-wrapper] {
+    border: 1px solid black;
+    height: 20px;
+    width: 20px;
+    border-radius: 50px;
+  }
+}
